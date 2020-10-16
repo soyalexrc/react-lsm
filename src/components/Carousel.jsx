@@ -9,7 +9,6 @@ const useStyles = makeStyles({
   }
 })
 
-
 function Carousel() {
   const classes = useStyles()
   const settings ={
@@ -24,16 +23,19 @@ function Carousel() {
   return (
       <Slider {...settings} className={classes.space}>
         <Slide
-          title="Creative - Clean - Responsive"
-          description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr"
+          img="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimagen-carousel-1.png?alt=media&token=bf37c2b6-3792-4b59-b062-c08e4b79cc0b"
+          title="Professional Web Design & Web Development"
+          description="We leverage the strengths of each and every platform to build incredible solutions across apple devices iPhone, iPad, Apple Watch, and android devices. "
+          />
+        <Slide 
+          img="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimagen-car-carousel-1.png?alt=media&token=b95fb856-c076-4e58-88b2-0d2b7cc29ec8"
+          title="Next Level Web Design & Development"
+          description="Our dedicated team of design and technology experts partner with you every step of the way of digital innovation independence. "
         />
         <Slide 
-          title="this is a title i dont know what to say"
-          description="aklsdklasmdklasmdklsmldml"
-        />
-        <Slide 
-          title="third title please god give me ideas"
-          description="al;smd;lask;dlaks;ldka;lskdkalskd;laklsdkas;ld"
+          img="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimg-carousel-3.png?alt=media&token=79b4b777-661d-4020-af3f-e6bd8940ed97"
+          title="70% Increase In Convertion Rate"
+          description="Effortlessly capture leads, build customer relationships and accept payments right from your website. "
         />
       </Slider>
     )

@@ -3,6 +3,7 @@ import Slider from 'react-slick'
 import { makeStyles } from '@material-ui/core/styles'
 import PricesSlide from './PricesSlide'
 import { Button, Container, Grid, Typography } from '@material-ui/core'
+import PricesSlideFeature from './PricesSlideFeature'
 
 const useStyles = makeStyles({
   space: {
@@ -15,11 +16,12 @@ function Prices() {
   const classes = useStyles()
 
   const settings = {
-      // className: "center",
-      // centerMode: true,
+      className: "center",
+      centerMode: true,
+      centerPadding: 0,
       dots: true,
       infinite: true,
-      arrows:'true',
+      arrows:false,
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 1,
@@ -75,12 +77,21 @@ function Prices() {
     </Grid>
 
     <Slider {...settings} className={classes.space}>
-      <PricesSlide />
-      <PricesSlide />
-      <PricesSlide />
-      <PricesSlide />
-      <PricesSlide />
-      <PricesSlide />
+      <PricesSlide title='Basic' subtitle='Website Package' prevPrice='99' actualPrice='999' >
+        <PricesSlideFeature featureTitle='photos' />
+        <PricesSlideFeature featureTitle='photos' />
+        <PricesSlideFeature featureTitle='photos' />
+        <PricesSlideFeature featureTitle='photos' />
+        <PricesSlideFeature featureTitle='photos' />
+        <PricesSlideFeature featureTitle='photos' />
+        <PricesSlideFeature featureTitle='photos' />
+        <PricesSlideFeature featureTitle='photos' />
+      </PricesSlide>
+      <PricesSlide title='StartUp' subtitle='Website Package' prevPrice='99' actualPrice='999'  />
+      <PricesSlide title='Professional' subtitle='Website Package' prevPrice='99' actualPrice='999'  />
+      <PricesSlide title='Elite' subtitle='Website Package' prevPrice='99' actualPrice='999'  />
+      <PricesSlide title='Corporate' subtitle='Website Package' prevPrice='99' actualPrice='999'  />
+      <PricesSlide title='Business' subtitle='Website Package' prevPrice='99' actualPrice='999'  />
     </Slider>
     </Container>
   )

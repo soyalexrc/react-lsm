@@ -1,38 +1,45 @@
 import React from 'react'
-import { Grid } from '@material-ui/core'
+import { Typography, Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles({
-  fullView: {
-    width:'100%',
-    height:'80vh',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center'
+const useStyles = makeStyles(theme => ({
+  image:{
+    minWidth:'400px',
+    maxWidth: '600px'
+  },
+  slide:{
+    height: '85vh'
+  },
+  center:{
+    display:'flex',
+    justifyContent:'center'
+  },
+  text:{
+    [theme.breakpoints.down('md')]:{
+      textAlign: 'center'
+    }
   }
-})
+}))
 
-function Slide({ title, backgroundImg, img, description }) {
+function Slide({ title, img, description }) {
   const classes = useStyles()
 
   return (
-    <div className={classes.fullView} >
-      <Grid 
-        container
-        alignItems="center"
-        alignContent="center"
-      >
-        <Grid item xs={0} sm={1} />
-
-        < Grid item xs={12}>
-        <h1>{title}</h1>
-        <h4>{description}</h4>
-
-          
-        </Grid> 
-        <Grid item xs={0} sm={1} />   
+      <Grid container alignItems='center' justify='center' alignContent='center'className={classes.slide}>
+          <Grid item xs={12} md={6}>
+            <figure className={classes.center}>
+              <img className={classes.image} src={img} alt={title}/>
+            </figure>
+          </Grid>
+          <Grid item xs={12} md={6} className={classes.text}>
+            <Typography variant="h3" color="initial">
+              {title}
+            </Typography>
+            <Typography variant="h6" color="initial">
+              {description}
+            </Typography>
+          </Grid>
       </Grid>
-    </div>
   )
 }
 

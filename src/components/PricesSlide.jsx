@@ -1,75 +1,105 @@
 import React from 'react'
 // import Button from '@material-ui/core/Button'
 // import clsx from 'clsx';
-import Card from '@material-ui/core/Card'
-import CardActions from '@material-ui/core/CardActions'
-import CardContent from '@material-ui/core/CardContent'
-import Avatar from '@material-ui/core/Avatar'
-import CardHeader from '@material-ui/core/CardHeader'
-import IconButton from '@material-ui/core/IconButton'
-import MoreVertIcon from '@material-ui/icons/MoreVert'
+import { Card, CardContent, CardHeader, IconButton ,CardMedia, Grid, Typography, Divider, ListItemText, ListItem, Button, List} from '@material-ui/core/'
 import { makeStyles } from '@material-ui/core/styles'
-import CardMedia from '@material-ui/core/CardMedia'
-import Typography from '@material-ui/core/Typography'
-import FavoriteIcon from '@material-ui/icons/Favorite'
-import ShareIcon from '@material-ui/icons/Share'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-// import { Collapse } from '@material-ui/core';
+import LanguageIcon from '@material-ui/icons/Language';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import ForumIcon from '@material-ui/icons/Forum';
+import PhoneInTalkIcon from '@material-ui/icons/PhoneInTalk';
 
 const useStyles = makeStyles( {
   card:{
-    maxWidth: '445px',
+    maxWidth: '465px',  
     // minWidth: '345px',
-    margin: '0px 8px'
+    margin: '8px 8px'
   },
   media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
+    height: '300px',
+    // paddingTop: '56.25%', // 16:9
+    position: 'relative',
+    overflowY: 'scroll',
+    padding: '16px'
   },
+  centerContent:{
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  cardContent:{
+    paddingRight:'52px',
+    paddingLeft:'52px',
+    paddingBottom: '0px!important'
+  },
+  verticalSpace:{
+    paddingBottom:'16px',
+    paddingTop: '16px',
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center'
+  }
 })
 
-function PricesSlide() {
+function PricesSlide(props) {
+  const { title, subtitle, prevPrice, actualPrice }  = props
   const classes = useStyles()
 
   return (
     <Card className={classes.card}>
       <CardHeader
         avatar={
-          <Avatar aria-label="">
-            R
-          </Avatar>
+          <LanguageIcon fontSize='large' />
         }
-        action={
-          <IconButton aria-label="">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="this is an example of a card"
-        subheader="October 12, 2020"
+        title={title}
+        subheader={subtitle}
         
-      />
-      <CardMedia
-        className={classes.media}
-        title="example 1"
-        image="https://thumbs.dreamstime.com/b/example-red-tag-example-red-square-price-tag-117502755.jpg"
-      />
-      <CardContent>
-        <Typography variant="body2" color="initial">
-        This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
-        </Typography>
+      />  
+      <CardMedia className={classes.media}>
+        {/* <List className={classes.mediaContent}>
+          <ListItem>
+            <ListItemText primary='photos' secondary='octubre de mi nacimiento' />
+          </ListItem>
+        </List> */}
+        {/* <Divider /> */}
+        {props.children}
+      </CardMedia>
+      <CardContent className={classes.cardContent}>
+        <Grid container>
+          <Grid item xs={6} className={classes.centerContent}> 
+            <AttachMoneyIcon  fontSize='large' />
+            <Typography variant="h2" color="initial">
+              {actualPrice}
+            </Typography>
+          </Grid>
+          <Grid item xs={6} className={classes.centerContent}> 
+            <AttachMoneyIcon fontSize='small' />
+            <Typography variant="h3" color="initial">
+              {prevPrice}
+            </Typography>
+          </Grid>
+          <Grid item xs={12} className={classes.verticalSpace}>
+            <Button variant="contained" color="primary">
+              Order now
+            </Button>
+          </Grid>
+          <Grid item xs={6} className={classes.centerContent}> 
+            <IconButton >
+              <ForumIcon />
+              <Typography variant='body1' color='initial'>
+                Live chat
+              </Typography>
+            </IconButton>
+          </Grid>
+          <Grid item xs={6} className={classes.centerContent}> 
+            <IconButton >
+              <PhoneInTalkIcon />
+              <Typography variant='body1' color='initial'>
+              +51 917 902 604
+              </Typography>
+            </IconButton>
+          </Grid>
+        </Grid>
       </CardContent>
-      <CardActions disableSpacing>
-      <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <IconButton>
-          <ExpandMoreIcon />
-        </IconButton>
-      </CardActions>
     </Card>
   )
 }
