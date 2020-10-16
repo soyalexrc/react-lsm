@@ -1,7 +1,7 @@
 import React from 'react'
 // import Button from '@material-ui/core/Button'
 // import clsx from 'clsx';
-import { Card, CardContent, CardHeader, IconButton ,CardMedia, Grid, Typography, Divider, ListItemText, ListItem, Button, List} from '@material-ui/core/'
+import { Card, CardContent, CardHeader, IconButton ,CardMedia, Grid, Typography, Button} from '@material-ui/core/'
 import { makeStyles } from '@material-ui/core/styles'
 import LanguageIcon from '@material-ui/icons/Language';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
