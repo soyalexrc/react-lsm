@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { AppBar, Typography, IconButton, Toolbar, Button, Avatar, TextField, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
+import Alert from './Alert'
 import db from '../Firebase'
 
 const useStyles = makeStyles({
@@ -23,6 +24,7 @@ function Navbar() {
   const [email, setEmail] = useState('')
   const [country, setCountry] = useState('')
   const [message, setMessage] = useState('')
+  const [alertMessage, setAlertMessage] = useState(null)
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -33,6 +35,7 @@ function Navbar() {
   };
 
   const handleSubmit = () => {
+    setAlertMessage(null)
     db.collection('clientMessages')
       .add({
         firstName: firstName,
@@ -43,10 +46,18 @@ function Navbar() {
         message: message
       })
       .then(() => {
-        alert('tu mensaje se envio sactisfactoriamente!')
+        // alert('tu mensaje se envio sactisfactoriamente!')
+        setAlertMessage({
+          type: 'success',
+          message: 'Excelente!, tu mensaje se envio. Te contactaremos en breve'
+        })
       })
       .catch((error) => {
-        alert(error.message)
+        // alert(error.message)
+        setAlertMessage({
+          type: 'error',
+          message: error.message
+        })
       })
 
     setFirstName('')
@@ -177,6 +188,8 @@ function Navbar() {
       </IconButton>
     </div>
   </Toolbar>
+  {alertMessage && 
+    <Alert type={alertMessage.type} message={alertMessage.message} autoClose={5000} />}
 </AppBar>
   )
 }
