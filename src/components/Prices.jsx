@@ -4,6 +4,15 @@ import { makeStyles } from '@material-ui/core/styles'
 import PricesSlide from './PricesSlide'
 import { Button, Container, Grid, Typography } from '@material-ui/core'
 import PricesSlideFeature from './PricesSlideFeature'
+import WebIcon from '@material-ui/icons/Web';
+import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
+import FileCopyIcon from '@material-ui/icons/FileCopy';
+import ContactMailIcon from '@material-ui/icons/ContactMail';
+import ViewCarouselIcon from '@material-ui/icons/ViewCarousel';
+import ImportantDevicesIcon from '@material-ui/icons/ImportantDevices';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import SearchIcon from '@material-ui/icons/Search';
+import TocIcon from '@material-ui/icons/Toc';
 
 const useStyles = makeStyles({
   space: {
@@ -77,21 +86,61 @@ function Prices() {
     </Grid>
 
     <Slider {...settings} className={classes.space}>
-      <PricesSlide title='Basic' subtitle='Website Package' prevPrice='99' actualPrice='999' >
-        <PricesSlideFeature featureTitle='photos' />
-        <PricesSlideFeature featureTitle='photos' />
-        <PricesSlideFeature featureTitle='photos' />
-        <PricesSlideFeature featureTitle='photos' />
-        <PricesSlideFeature featureTitle='photos' />
-        <PricesSlideFeature featureTitle='photos' />
-        <PricesSlideFeature featureTitle='photos' />
-        <PricesSlideFeature featureTitle='photos' />
+      <PricesSlide title='Basico(CMS)' subtitle='Paquete web' prevPrice='488' actualPrice='240' >
+        <PricesSlideFeature title='Sitio Web Prediseñado' Icon={<WebIcon fontSize='large'/>} />
+        <PricesSlideFeature title='Administración de Contenido' Icon={<TocIcon fontSize='large'/>} />
+        <PricesSlideFeature title='Galería de Imágenes' Icon={<PhotoLibraryIcon fontSize='large'/>}  />
+        <PricesSlideFeature title='Cantidad de Páginas (Max 05)' Icon={<FileCopyIcon fontSize='large'/>} />
+        <PricesSlideFeature title='Formulario de Contacto' Icon={<ContactMailIcon fontSize='large'/>} />
+        <PricesSlideFeature title='Slider de Imágenes' Icon={<ViewCarouselIcon fontSize='large'/>} />
+        <PricesSlideFeature title='Diseño Responsive' Icon={<ImportantDevicesIcon fontSize='large'/>} />
+        <PricesSlideFeature title='Links a Redes Sociales' Icon={<FacebookIcon fontSize='large'/>} />
+        <PricesSlideFeature title='Alta en Buscadores' Icon={<SearchIcon fontSize='large'/>} />
       </PricesSlide>
-      <PricesSlide title='StartUp' subtitle='Website Package' prevPrice='99' actualPrice='999'  />
-      <PricesSlide title='Professional' subtitle='Website Package' prevPrice='99' actualPrice='999'  />
-      <PricesSlide title='Elite' subtitle='Website Package' prevPrice='99' actualPrice='999'  />
-      <PricesSlide title='Corporate' subtitle='Website Package' prevPrice='99' actualPrice='999'  />
-      <PricesSlide title='Business' subtitle='Website Package' prevPrice='99' actualPrice='999'  />
+
+      <PricesSlide title='Inicial' subtitle='Paquete web' prevPrice='499' actualPrice='350'>
+        <PricesSlideFeature title='Sitio Web Prediseñado (Con Plantillas)' Icon={<WebIcon />} />
+        <PricesSlideFeature title='Administración de Contenido' Icon={<TocIcon />}/>
+        <PricesSlideFeature title='Galería de Imágenes' Icon={<PhotoLibraryIcon />}/>
+        <PricesSlideFeature title='Cantidad de Páginas (Max 07)' Icon={<FileCopyIcon />}/>
+        <PricesSlideFeature title='Formulario de Contacto' Icon={<ContactMailIcon />}/>
+        <PricesSlideFeature title='Slider de Imágenes' Icon={<ViewCarouselIcon />}/>
+        <PricesSlideFeature title='Diseño Responsive' Icon={<ImportantDevicesIcon />}/>
+        <PricesSlideFeature title='Links a Redes Sociales' Icon={<FacebookIcon />}/>
+        <PricesSlideFeature title='Alta en Buscadores' Icon={<SearchIcon />}/>
+      </PricesSlide>
+
+      <PricesSlide title='Profesional' subtitle='Paquete web' prevPrice='750' actualPrice='600'>
+        <PricesSlideFeature title='Diseño Web Personalizado (Basado en Plantilla)' Icon={<WebIcon />} />
+        <PricesSlideFeature title='Autogestión de Contenido' Icon={<TocIcon />}/>
+        <PricesSlideFeature title='Cantidad de Páginas definidas por el Cliente' Icon={<PhotoLibraryIcon />}/>
+        <PricesSlideFeature title='Portafolio de Productos o Servicios' Icon={<FileCopyIcon />}/>
+        <PricesSlideFeature title='Galería de Imágenes' Icon={<ContactMailIcon />}/>
+        <PricesSlideFeature title='Slider de Imágenes y Contenido' Icon={<ViewCarouselIcon />}/>
+        <PricesSlideFeature title='Diseño Responsive' Icon={<ImportantDevicesIcon />}/>
+        <PricesSlideFeature title='Integracion a Redes Sociales' Icon={<FacebookIcon />}/>
+        <PricesSlideFeature title='Posicionamiento SEO Básico' Icon={<SearchIcon />}/>
+        <PricesSlideFeature title='Diseño Inteligente E-Marketing' Icon={<SearchIcon />}/>
+      </PricesSlide>
+
+      <PricesSlide title='Empresarial' subtitle='Paquete web' prevPrice='1050' actualPrice='820'>
+        <PricesSlideFeature title='03 Propuestas Gráficas de Diseño' Icon={<WebIcon />} />
+        <PricesSlideFeature title='Autogestión de Contenido' Icon={<TocIcon />}/>
+        <PricesSlideFeature title='Cantidad de Páginas definidas por el Cliente' Icon={<PhotoLibraryIcon />}/>
+        <PricesSlideFeature title='Portafolio de Productos o Servicios' Icon={<FileCopyIcon />}/>
+        <PricesSlideFeature title='Galería de Imágenes' Icon={<ContactMailIcon />}/>
+        <PricesSlideFeature title='Slider de Imágenes y Contenido' Icon={<ViewCarouselIcon />}/>
+        <PricesSlideFeature title='Diseño Responsive' Icon={<ImportantDevicesIcon />}/>
+        <PricesSlideFeature title='Integracion a Redes Sociales' Icon={<FacebookIcon />}/>
+        <PricesSlideFeature title='Posicionamiento SEO Básico Plus' Icon={<SearchIcon />}/>
+        <PricesSlideFeature title='Diseño Inteligente E-Marketing' Icon={<SearchIcon />}/>
+        <PricesSlideFeature title='Integración Google Maps' Icon={<SearchIcon />}/>
+        <PricesSlideFeature title='Integración Google Analytics' Icon={<SearchIcon />}/>
+        <PricesSlideFeature title='Configuración Google Email ' Icon={<SearchIcon />}/>
+      </PricesSlide>
+
+    
+      
     </Slider>
     </Container>
   )

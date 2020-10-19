@@ -1,26 +1,33 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { Divider, List, ListItem, ListItemAvatar, ListItemText, Avatar } from '@material-ui/core'
+import { Divider, IconButton, List, ListItem, ListItemAvatar, ListItemText } from '@material-ui/core'
 
 const useStyles = makeStyles ({
   mediaContent:{
     width:'100%',
-    maxWidth:'360px'
+    maxWidth:'360px',
+    paddingTop:0,
+    paddingBottom:0,
   },
+  listItem:{
+    paddingTop:0,
+    paddingBottom:0,
+  }
 })
 
-function PricesSlideFeature({ featureIcon, featureTitle, featureSubtitle }) {
+function PricesSlideFeature({ Icon, title, subtitle }) {
   const classes  = useStyles()
+
   return (
     <>
       <List className={classes.mediaContent}>
-        <ListItem>
+        <ListItem className={classes.listItem}>
           <ListItemAvatar>
-            <Avatar>
-              {featureIcon}
-            </Avatar>
+            <IconButton>
+              {Icon}
+            </IconButton>
           </ListItemAvatar>
-          <ListItemText primary={featureTitle} secondary={featureSubtitle} />
+          <ListItemText primary={title} secondary={subtitle} />
         </ListItem>
       </List> 
       <Divider />

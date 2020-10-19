@@ -10,7 +10,7 @@ import PhoneInTalkIcon from '@material-ui/icons/PhoneInTalk';
 
 const useStyles = makeStyles( {
   card:{
-    maxWidth: '465px',  
+    maxWidth: '340px',  
     // minWidth: '345px',
     margin: '8px 8px'
   },
@@ -27,16 +27,19 @@ const useStyles = makeStyles( {
     alignItems:'center'
   },
   cardContent:{
-    paddingRight:'52px',
-    paddingLeft:'52px',
+    paddingRight:'32px',
+    paddingLeft:'32px',
     paddingBottom: '0px!important'
   },
   verticalSpace:{
     paddingBottom:'16px',
-    paddingTop: '16px',
     display:'flex',
     justifyContent:'center',
     alignItems:'center'
+  },
+  prevPrice:{
+    textDecoration: 'line-through',
+    color: 'grey'
   }
 })
 
@@ -55,13 +58,9 @@ function PricesSlide(props) {
         
       />  
       <CardMedia className={classes.media}>
-        {/* <List className={classes.mediaContent}>
-          <ListItem>
-            <ListItemText primary='photos' secondary='octubre de mi nacimiento' />
-          </ListItem>
-        </List> */}
-        {/* <Divider /> */}
+        
         {props.children}
+
       </CardMedia>
       <CardContent className={classes.cardContent}>
         <Grid container>
@@ -73,7 +72,7 @@ function PricesSlide(props) {
           </Grid>
           <Grid item xs={6} className={classes.centerContent}> 
             <AttachMoneyIcon fontSize='small' />
-            <Typography variant="h3" color="initial">
+            <Typography variant="h5" color="initial" className={classes.prevPrice}>
               {prevPrice}
             </Typography>
           </Grid>
