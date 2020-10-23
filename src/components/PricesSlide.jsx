@@ -82,7 +82,7 @@ function PricesSlide(props) {
             </Button>
           </Grid>
           <Grid item xs={6} className={classes.centerContent}> 
-            <IconButton >
+            <IconButton>
               <ForumIcon />
               <Typography variant='body1' color='initial'>
                 Live chat

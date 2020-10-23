@@ -19,9 +19,10 @@ function Modal({ show, close }) {
   const [alertMessage, setAlertMessage] = useState(null)
 
 
-  const handleSubmit = () => {
-    setAlertMessage(null)
-    db.collection('clientMessages')
+  const handleSubmit = async() => {
+    await setAlertMessage(null)
+    console.log('seteado a null', alertMessage)
+    await db.collection('clientMessages')
     .add({
       firstName: firstName,
       lastName: lastName,
@@ -36,6 +37,7 @@ function Modal({ show, close }) {
         type: 'success',
         message: 'Excelente!, tu mensaje se envio. Te contactaremos en breve'
       })
+      console.log('seteado a success', alertMessage)
     })
       .catch((error) => {
         // alert(error.message)
@@ -53,7 +55,9 @@ function Modal({ show, close }) {
     setMessage('')
 
     // setModalShow(false)
-    close()
+    console.log('cerrando')
+    
+    await close()
   }
   
   return (

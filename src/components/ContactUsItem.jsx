@@ -1,4 +1,4 @@
-import { Grid, IconButton, Typography } from '@material-ui/core'
+import { Grid, IconButton, Link, Typography } from '@material-ui/core'
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -25,22 +25,24 @@ const useStyles = makeStyles ({
   }
 })
 
-function ContactUsItem({ Icon, title, subtitle }) {
+function ContactUsItem({ Icon, title, subtitle,link }) {
   const classes = useStyles()
 
   return (
     <Grid item xs={12} sm={6} md="3" className={classes.card}>
-      <IconButton>
-          <Icon fontSize='large' className={classes.border}/>
-      </IconButton>
-        <div className={classes.card__right}>
-          <Typography variant="h5" color="initial">
-            {title}
-          </Typography>
-          <Typography variant="body2" color="initial">
-            {subtitle}
-          </Typography>
-        </div>
+      <Link href={link} target="_blank">
+        <IconButton>
+            <Icon fontSize='large' className={classes.border}/>
+        </IconButton>
+      </Link>
+      <div className={classes.card__right}>
+        <Typography variant="h5" color="initial">
+          {title}
+        </Typography>
+        <Typography variant="body2" color="initial">
+          {subtitle}
+        </Typography>
+      </div>
     </Grid>
   )
 }

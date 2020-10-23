@@ -13,6 +13,7 @@ import Chatbot from 'react-chatbot-kit'
 import messageParser from './chatbot/messageParser'
 import config from './chatbot/config'
 import actionProvider from './chatbot/actionProvider'
+import Services from './components/Services';
 
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -35,7 +36,7 @@ const useStyles = makeStyles ({
 
 function App() {
   const classes = useStyles()
-  const [showBot, toggleBot] = useState(false)
+  const [showBot, setShowBot] = useState(false)
 
   const saveMessages = (messages) => {
     localStorage.setItem('chat_messages', JSON.stringify(messages))
@@ -46,10 +47,15 @@ function App() {
     return messages
   }
 
+  const Bot = () => {
+    setShowBot(!showBot)
+  }
+
   return (
     <div className="App" >
       <Navbar />
       <Carousel />
+      <Services />
       <Prices />
       <Portfolio /> 
       <Features />
@@ -66,9 +72,11 @@ function App() {
           />
         </Box>
       )}
-      <Fab onClick={() => toggleBot((prev) => !prev)} className={classes.button} variant="contained" color="default">
+      <Fab onClick={Bot} className={classes.button} variant="extended" color="default">
         <InsertCommentIcon style={{ paddingRight: '8px' }} /> chat
       </Fab>
+
+      
     </div>
   );
 }

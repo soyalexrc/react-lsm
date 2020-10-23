@@ -21,11 +21,11 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-function Slide({ title, img, description }) {
+function Slide({ title, img, description, backgroundImage }) {
   const classes = useStyles()
 
   return (
-      <Grid container alignItems='center' justify='center' alignContent='center'className={classes.slide}>
+      <Grid container alignItems='center' justify='center' alignContent='center'className={classes.slide} style={{ backgroundimage:{backgroundImage} }}>
           <Grid item xs={12} md={6}>
             <figure className={classes.center}>
               <img className={classes.image} src={img} alt={title}/>

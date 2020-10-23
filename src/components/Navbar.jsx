@@ -32,7 +32,7 @@ function Navbar() {
   return (
     <AppBar position="sticky" className={classes.grow}>
   <Toolbar>
-    <IconButton edge="start " color="inherit" aria-label="menu">
+    <IconButton edge="start" color="inherit" aria-label="menu">
       <Typography variant="h6">
         Lsm Company
       </Typography>
@@ -53,14 +53,11 @@ function Navbar() {
       <IconButton aria-label="productos" >
         <Typography variant="body2" color="initial">Contactanos</Typography>
       </IconButton> 
-      <IconButton aria-label="productos" >
-        <Typography variant="body2" color="initial">Productos</Typography>
-      </IconButton>
       
       <Button color="secondary" variant="contained" onClick={showModal}>Contratanos</Button>
       <Modal show={show} close={closeModal}/>
     </div>
-    <div className>
+    <div>
       <IconButton aria-label="avatar">
       <Avatar></Avatar> 
       </IconButton>

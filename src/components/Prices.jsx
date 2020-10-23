@@ -86,7 +86,7 @@ function Prices() {
     </Grid>
 
     <Slider {...settings} className={classes.space}>
-      <PricesSlide title='Basico(CMS)' subtitle='Paquete web' prevPrice='488' actualPrice='240' >
+      <PricesSlide title='Basico(CMS)' subtitle='Paquete web' prevPrice='488' actualPrice='240'>
         <PricesSlideFeature title='Sitio Web Prediseñado' Icon={<WebIcon fontSize='large'/>} />
         <PricesSlideFeature title='Administración de Contenido' Icon={<TocIcon fontSize='large'/>} />
         <PricesSlideFeature title='Galería de Imágenes' Icon={<PhotoLibraryIcon fontSize='large'/>}  />
@@ -99,44 +99,44 @@ function Prices() {
       </PricesSlide>
 
       <PricesSlide title='Inicial' subtitle='Paquete web' prevPrice='499' actualPrice='350'>
-        <PricesSlideFeature title='Sitio Web Prediseñado (Con Plantillas)' Icon={<WebIcon />} />
-        <PricesSlideFeature title='Administración de Contenido' Icon={<TocIcon />}/>
-        <PricesSlideFeature title='Galería de Imágenes' Icon={<PhotoLibraryIcon />}/>
-        <PricesSlideFeature title='Cantidad de Páginas (Max 07)' Icon={<FileCopyIcon />}/>
-        <PricesSlideFeature title='Formulario de Contacto' Icon={<ContactMailIcon />}/>
-        <PricesSlideFeature title='Slider de Imágenes' Icon={<ViewCarouselIcon />}/>
-        <PricesSlideFeature title='Diseño Responsive' Icon={<ImportantDevicesIcon />}/>
-        <PricesSlideFeature title='Links a Redes Sociales' Icon={<FacebookIcon />}/>
-        <PricesSlideFeature title='Alta en Buscadores' Icon={<SearchIcon />}/>
+        <PricesSlideFeature title='Sitio Web Prediseñado (Con Plantillas)' Icon={<WebIcon fontSize='large'/>} />
+        <PricesSlideFeature title='Administración de Contenido' Icon={<TocIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Galería de Imágenes' Icon={<PhotoLibraryIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Cantidad de Páginas (Max 07)' Icon={<FileCopyIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Formulario de Contacto' Icon={<ContactMailIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Slider de Imágenes' Icon={<ViewCarouselIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Diseño Responsive' Icon={<ImportantDevicesIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Links a Redes Sociales' Icon={<FacebookIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Alta en Buscadores' Icon={<SearchIcon fontSize='large'/>}/>
       </PricesSlide>
 
       <PricesSlide title='Profesional' subtitle='Paquete web' prevPrice='750' actualPrice='600'>
-        <PricesSlideFeature title='Diseño Web Personalizado (Basado en Plantilla)' Icon={<WebIcon />} />
+        <PricesSlideFeature title='Diseño Web Personalizado (Basado en Plantilla)' Icon={<WebIcon fontSize='large'/>} />
         <PricesSlideFeature title='Autogestión de Contenido' Icon={<TocIcon />}/>
-        <PricesSlideFeature title='Cantidad de Páginas definidas por el Cliente' Icon={<PhotoLibraryIcon />}/>
-        <PricesSlideFeature title='Portafolio de Productos o Servicios' Icon={<FileCopyIcon />}/>
+        <PricesSlideFeature title='Cantidad de Páginas definidas por el Cliente' Icon={<PhotoLibraryIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Portafolio de Productos o Servicios' Icon={<FileCopyIcon fontSize='large'/>}/>
         <PricesSlideFeature title='Galería de Imágenes' Icon={<ContactMailIcon />}/>
-        <PricesSlideFeature title='Slider de Imágenes y Contenido' Icon={<ViewCarouselIcon />}/>
-        <PricesSlideFeature title='Diseño Responsive' Icon={<ImportantDevicesIcon />}/>
-        <PricesSlideFeature title='Integracion a Redes Sociales' Icon={<FacebookIcon />}/>
-        <PricesSlideFeature title='Posicionamiento SEO Básico' Icon={<SearchIcon />}/>
-        <PricesSlideFeature title='Diseño Inteligente E-Marketing' Icon={<SearchIcon />}/>
+        <PricesSlideFeature title='Slider de Imágenes y Contenido' Icon={<ViewCarouselIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Diseño Responsive' Icon={<ImportantDevicesIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Integracion a Redes Sociales' Icon={<FacebookIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Posicionamiento SEO Básico' Icon={<SearchIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Diseño Inteligente E-Marketing' Icon={<SearchIcon fontSize='large'/>}/>
       </PricesSlide>
 
       <PricesSlide title='Empresarial' subtitle='Paquete web' prevPrice='1050' actualPrice='820'>
-        <PricesSlideFeature title='03 Propuestas Gráficas de Diseño' Icon={<WebIcon />} />
-        <PricesSlideFeature title='Autogestión de Contenido' Icon={<TocIcon />}/>
-        <PricesSlideFeature title='Cantidad de Páginas definidas por el Cliente' Icon={<PhotoLibraryIcon />}/>
-        <PricesSlideFeature title='Portafolio de Productos o Servicios' Icon={<FileCopyIcon />}/>
-        <PricesSlideFeature title='Galería de Imágenes' Icon={<ContactMailIcon />}/>
-        <PricesSlideFeature title='Slider de Imágenes y Contenido' Icon={<ViewCarouselIcon />}/>
-        <PricesSlideFeature title='Diseño Responsive' Icon={<ImportantDevicesIcon />}/>
-        <PricesSlideFeature title='Integracion a Redes Sociales' Icon={<FacebookIcon />}/>
-        <PricesSlideFeature title='Posicionamiento SEO Básico Plus' Icon={<SearchIcon />}/>
-        <PricesSlideFeature title='Diseño Inteligente E-Marketing' Icon={<SearchIcon />}/>
-        <PricesSlideFeature title='Integración Google Maps' Icon={<SearchIcon />}/>
-        <PricesSlideFeature title='Integración Google Analytics' Icon={<SearchIcon />}/>
-        <PricesSlideFeature title='Configuración Google Email ' Icon={<SearchIcon />}/>
+        <PricesSlideFeature title='03 Propuestas Gráficas de Diseño' Icon={<WebIcon fontSize='large'/>} />
+        <PricesSlideFeature title='Autogestión de Contenido' Icon={<TocIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Cantidad de Páginas definidas por el Cliente' Icon={<PhotoLibraryIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Portafolio de Productos o Servicios' Icon={<FileCopyIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Galería de Imágenes' Icon={<ContactMailIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Slider de Imágenes y Contenido' Icon={<ViewCarouselIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Diseño Responsive' Icon={<ImportantDevicesIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Integracion a Redes Sociales' Icon={<FacebookIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Posicionamiento SEO Básico Plus' Icon={<SearchIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Diseño Inteligente E-Marketing' Icon={<SearchIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Integración Google Maps' Icon={<SearchIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Integración Google Analytics' Icon={<SearchIcon fontSize='large'/>}/>
+        <PricesSlideFeature title='Configuración Google Email ' Icon={<SearchIcon fontSize='large'/>}/>
       </PricesSlide>
 
     
