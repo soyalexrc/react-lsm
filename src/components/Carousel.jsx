@@ -6,7 +6,7 @@ import Slide from './Slide'
 const useStyles = makeStyles({
   space:{
     marginBottom: '48px'
-  }
+  },
 })
 
 function Carousel() {
@@ -23,10 +23,10 @@ function Carousel() {
   return (
       <Slider {...settings} className={classes.space}>
         <Slide
+          style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&w=1000&q=80")' }}
           img="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimagen-carousel-1.png?alt=media&token=bf37c2b6-3792-4b59-b062-c08e4b79cc0b"
           title="Professional Web Design & Web Development"
           description="We leverage the strengths of each and every platform to build incredible solutions across apple devices iPhone, iPad, Apple Watch, and android devices. "
-          backgroundImage="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&w=1000&q=80"
           />
         <Slide 
           img="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimagen-car-carousel-1.png?alt=media&token=b95fb856-c076-4e58-88b2-0d2b7cc29ec8"

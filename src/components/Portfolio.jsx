@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from '@material-ui/core/Container'
-import { GridList, GridListTile, Typography, IconButton, Grid } from '@material-ui/core'
+import { GridList, GridListTile, Typography, Grid, Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles({
@@ -8,21 +8,40 @@ const useStyles = makeStyles({
     display: 'flex',
     flexWrap: 'wrap',
     marginBottom:'100px',
-    marginTop:'100px'
-    
+    marginTop:'100px',
+    '& .MuiGrid-item' : {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      '&:hover': {
+        '& .MuiButton-root':{
+          display: 'block'
+        }
+      },
+      '& .MuiButton-root':{
+        display: 'none',
+        position: 'absolute',
+        top: '50%',
+        left: '28%',
+        zIndex: 99,
+      },
+    },
   },
   image:{
     objectFit:'contain',
     borderRadius: '999px',
-    '&:hover':{
-      maskImage:'black'
-    },
-    space:{
-      paddingBottom:'50px',
-      paddingTop: '50px'
+  },
+  space:{
+    paddingBottom:'50px',
+    paddingTop: '50px'
+  },
+  imageContainer:{
+    borderRadius: '999px',
+    maxWidth: '350px',
+    maxHeight: '230px',
+    posotion: 'relative',
     }
-  }
-})
+  })
 
 const tileData = [
   {
@@ -95,9 +114,10 @@ function Portfolio() {
         {tileData.map((tile) => (
           <Grid item xs={12} sm={6} md={4} key={tile.id}> 
             <GridListTile cols={tile.cols || 1}>
-              <IconButton>
                 <img src={tile.image} alt={tile.title} className={classes.image} />
-              </IconButton>
+                <Button variant="text" color="default">
+                  {tile.title}
+                </Button>
             </GridListTile>
           </Grid>
         ))}
