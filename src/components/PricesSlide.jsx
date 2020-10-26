@@ -2,9 +2,9 @@ import React from 'react'
 import { useSpring, animated } from 'react-spring'
 // import Button from '@material-ui/core/Button'
 // import clsx from 'clsx';
-import { Card, CardContent, CardHeader, IconButton ,CardMedia, Grid, Typography, Button} from '@material-ui/core/'
+import { Card, CardContent, IconButton ,CardMedia, Grid, Typography, Button} from '@material-ui/core/'
 import { makeStyles } from '@material-ui/core/styles'
-import LanguageIcon from '@material-ui/icons/Language';
+// import LanguageIcon from '@material-ui/icons/Language';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import ForumIcon from '@material-ui/icons/Forum';
 import PhoneInTalkIcon from '@material-ui/icons/PhoneInTalk';
@@ -45,12 +45,31 @@ const useStyles = makeStyles( {
   prevPrice:{
     textDecoration: 'line-through',
     color: 'grey'
+  },
+  cardHeader: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: '30px',
+    '& h2':{
+      fontSize: '36px',
+      padding: 0,
+      margin: 0
+    },
+    '& p':{
+      fontSize: '24px',
+      padding: 0,
+      paddingBottom: '10px',
+      margin: 0,
+      color: 'gray'
+    }
   }
 })
 
 
 function PricesSlide(props) {
-  const { title, subtitle, prevPrice, actualPrice }  = props
+  const { title, subtitle, prevPrice, actualPrice, Icon }  = props
   const classes = useStyles()
   const [springStyles, set] = useSpring(() => ({
     transform: 'scale(1)',
@@ -68,14 +87,13 @@ const updateHover = hovering => ({
   return (
     <animated.div style={springStyles} onMouseEnter={ () => set(updateHover(true)) } onMouseLeave={ () => set(updateHover(false)) }>
       <Card className={classes.card}>
-        <CardHeader
-          avatar={
-            <LanguageIcon fontSize='large' />
-          }
-          title={title}
-          subheader={subtitle}
-          
-        />  
+        <div className={classes.cardHeader} >
+          <IconButton>
+            {Icon}
+          </IconButton>
+          <h2>{title}</h2>
+          <p>{subtitle}</p>
+        </div>  
         <CardMedia className={classes.media}>
           
           {props.children}

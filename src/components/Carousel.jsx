@@ -7,6 +7,9 @@ const useStyles = makeStyles({
   space:{
     marginBottom: '48px'
   },
+  imageOne:{
+    background: 'url("https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Fimagen-carousel-2.png?alt=media&token=d1657e7b-24d2-4fda-af25-cec7b0802e30")',
+  }
 })
 
 function Carousel() {
@@ -23,7 +26,7 @@ function Carousel() {
   return (
       <Slider {...settings} className={classes.space}>
         <Slide
-          style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&w=1000&q=80")' }}
+          className={classes.imageOne}
           img="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimagen-carousel-1.png?alt=media&token=bf37c2b6-3792-4b59-b062-c08e4b79cc0b"
           title="Professional Web Design & Web Development"
           description="We leverage the strengths of each and every platform to build incredible solutions across apple devices iPhone, iPad, Apple Watch, and android devices. "

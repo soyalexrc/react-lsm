@@ -20,7 +20,9 @@ const useStyles = makeStyles({
   drawer: {
     width: '100%',
     minWidth: '260px',
-
+  },
+  text: {
+    color: 'white'
   }
 })
 
@@ -55,19 +57,19 @@ function Navbar() {
           <div className={classes.navbarRight}>
             <Hidden smDown>
               <IconButton aria-label="productos" >
-                <Typography variant="body2" color="initial">Productos</Typography>
+                <Typography variant="body2" className={classes.text}>Productos</Typography>
               </IconButton>
               <IconButton aria-label="productos" >
-                <Typography variant="body2" color="initial">Paquetes</Typography>
+                <Typography variant="body2" className={classes.text}>Paquetes</Typography>
               </IconButton>
               <IconButton aria-label="productos" >
-                <Typography variant="body2" color="initial">Portafolio</Typography>
+                <Typography variant="body2" className={classes.text}>Portafolio</Typography>
               </IconButton>
               <IconButton aria-label="productos" >
-                <Typography variant="body2" color="initial">Sobre Nosotros</Typography>
+                <Typography variant="body2" className={classes.text}>Sobre Nosotros</Typography>
               </IconButton>
               <IconButton aria-label="productos" >
-                <Typography variant="body2" color="initial">Contactanos</Typography>
+                <Typography variant="body2" className={classes.text}>Contactanos</Typography>
               </IconButton> 
               
               <Button color="secondary" variant="contained" onClick={showModal}>Contratanos</Button>

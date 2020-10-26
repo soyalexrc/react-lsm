@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from '@material-ui/core/Container'
-import { GridList, GridListTile, Typography, Grid, Button } from '@material-ui/core'
+import { GridList, GridListTile, Typography, Grid, IconButton } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles({
@@ -40,7 +40,11 @@ const useStyles = makeStyles({
     maxWidth: '350px',
     maxHeight: '230px',
     posotion: 'relative',
-    }
+    },
+    gridList: {
+      padding: '12px',
+      overflow: 'hidden'
+    },
   })
 
 const tileData = [
@@ -110,14 +114,16 @@ function Portfolio() {
       <Typography variant="h4" align='center' color="initial" style={{ paddingTop: '50px', paddingBottom:'50px' }} >
           Un vistazo a nuestro galardonado portafolio de sitios web     
         </Typography>
-      <GridList cellHeight={260} cols={3} >
+      <GridList cellHeight={300} cols={3} className={classes.gridList}>
         {tileData.map((tile) => (
           <Grid item xs={12} sm={6} md={4} key={tile.id}> 
-            <GridListTile cols={tile.cols || 1}>
+            <GridListTile cols={tile.cols || 1} className={classes.gridTile}>
+              <Typography variant="h6" color="secondaryText" align="center">
+                {tile.title}
+              </Typography>
+              <IconButton>
                 <img src={tile.image} alt={tile.title} className={classes.image} />
-                <Button variant="text" color="default">
-                  {tile.title}
-                </Button>
+              </IconButton>
             </GridListTile>
           </Grid>
         ))}
