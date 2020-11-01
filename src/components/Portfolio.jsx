@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles({
   container:{
+    padding: 0,
     display: 'flex',
     flexWrap: 'wrap',
     marginBottom:'100px',
@@ -109,7 +110,7 @@ function Portfolio() {
   const classes = useStyles()
 
   return (
-    <Container maxWidth="lg" className={classes.container}>
+    <Container maxWidth="lg" className={classes.container} id="portfolio">
       <Grid container justify='center'>
       <Typography variant="h4" align='center' color="initial" style={{ paddingTop: '50px', paddingBottom:'50px' }} >
           Un vistazo a nuestro galardonado portafolio de sitios web     

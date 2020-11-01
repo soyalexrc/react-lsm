@@ -22,7 +22,7 @@ function ContactUs() {
   const classes = useStyles() 
   return (
     <>
-    <Container maxWidth="md" className={classes.padding}>
+    <Container maxWidth="md" className={classes.padding} id="contactUs">
       <Typography variant="h4" align='center' color="initial" className={classes.padding}>
         Conéctese con nosotros para obtener una cotización personalizada en su proyecto web hoy!
       </Typography>

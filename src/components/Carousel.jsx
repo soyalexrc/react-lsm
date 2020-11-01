@@ -5,39 +5,56 @@ import { Grid, Typography } from '@material-ui/core'
 // import Slide from './Slide'
 
 const useStyles = makeStyles(theme =>({
-  space:{
-    marginBottom: '48px',
-    backgroundImage: 'url("https://www.publicdomainpictures.net/pictures/60000/velka/chevrons-stripe-colorful-background-1381350087B52.jpg")',
-    backgroundRepeat: 'no-repeat',
-    height: '88vh',
+ space:{
+    // marginBottom: '48px',
+    // backgroundImage: 'url("https://www.publicdomainpictures.net/pictures/60000/velka/chevrons-stripe-colorful-background-1381350087B52.jpg")',
+    // backgroundRepeat: 'no-repeat',
+    // height: '88vh',
   },
   slideOne:{
-    // backgroundImage: 'url("https://www.publicdomainpictures.net/pictures/60000/velka/chevrons-stripe-colorful-background-1381350087B52.jpg")',
+    backgroundImage: 'url( "https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Fimagen-carousel.png?alt=media&token=b11d738d-8431-4116-a8d8-3dbaa3d5a017")',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    zIndex: '10',
     height: '85vh',
-    width: '100vw'
+    width: '100vw',
+    // backgroundImage: 'url("https://www.publicdomainpictures.net/pictures/60000/velka/chevrons-stripe-colorful-background-1381350087B52.jpg")',
     // backgroundRepeat: 'no-repeat',
     // objectFit: 'contain',
     // maxwidth: '100%'
   },
   slideTwo:{
-    // backgroundImage: 'url("https://www.publicdomainpictures.net/pictures/60000/velka/chevrons-stripe-colorful-background-1381350087B52.jpg")',
+    backgroundImage: 'url( "https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Fimagen-carousel.png?alt=media&token=b11d738d-8431-4116-a8d8-3dbaa3d5a017")',
+    backgroundRepeat: 'no-repeat',
     height: '85vh',
-    width: '100vw'
+    width: '100vw',
+    backgroundSize: 'cover', 
+    zIndex: '100'
+    // backgroundSize: 'cover',
+    // backgroundImage: 'url("https://www.publicdomainpictures.net/pictures/60000/velka/chevrons-stripe-colorful-background-1381350087B52.jpg")',
     // backgroundRepeat: 'no-repeat',
     // objectFit: 'cover',
     // width: '100vw'
   },
   slideThree:{
-    // backgroundImage: 'url("https://www.publicdomainpictures.net/pictures/60000/velka/chevrons-stripe-colorful-background-1381350087B52.jpg")',
+    backgroundImage: 'url("https://www.publicdomainpictures.net/pictures/60000/velka/chevrons-stripe-colorful-background-1381350087B52.jpg")',
     height: '85vh',
-    width: '100vw'
+    width: '100vw',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    zIndex: '1000'
     // backgroundRepeat: 'no-repeat',
     // objectFit: 'cover',
     // width: '100vw'
   },
   image:{
     minWidth:'400px',
-    maxWidth: '600px'
+    maxWidth: '600px',
+    [theme.breakpoints.down('sm')]:{
+      minWidth: '300px',
+      maxWidth:'400px'
+    }
+
   },
   center:{
     display:'flex',
@@ -46,6 +63,14 @@ const useStyles = makeStyles(theme =>({
   text:{
     [theme.breakpoints.down('md')]:{
       textAlign: 'center'
+    },
+    [theme.breakpoints.down('xs')]:{
+      '& .MuiTypography-h3':{
+        fontSize: '24px'
+      },
+      '& .MuiTypography-h6':{
+        fontSize: '12px'
+      }
     }
   }
 }))
@@ -53,7 +78,7 @@ const useStyles = makeStyles(theme =>({
 function Carousel() {
   const classes = useStyles()
   const settings ={
-    dots: true,
+    dots: false,
     infinite: true,
     slidesToShow:1,
     slidesToScroll:1,
@@ -66,7 +91,7 @@ function Carousel() {
   }
 
   return (
-      <Slider {...settings} className={classes.space}>
+      <Slider {...settings} className={classes.space} id="hero">
         <div className={classes.slideOne}>
           <Grid container alignItems='center' justify='center' alignContent='center'className={classes.slideOne}>
             <Grid item xs={12} md={6}>
@@ -102,7 +127,7 @@ function Carousel() {
           </Grid>
         </div>
         <div className={classes.slideThree}>
-          s<Grid container alignItems='center' justify='center' alignContent='center'className={classes.slideOne}>
+          <Grid container alignItems='center' justify='center' alignContent='center'className={classes.slideOne}>
             <Grid item xs={12} md={6}>
               <figure className={classes.center}>
                 <img className={classes.image} src="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimg-carousel-3.png?alt=media&token=79b4b777-661d-4020-af3f-e6bd8940ed97" alt=""/>

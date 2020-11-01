@@ -80,7 +80,7 @@ function Prices() {
 }
 
   return (
-    <Container maxWidth='lg' className={classes.space}>
+    <Container maxWidth='lg' className={classes.space} id="prices">
       <Typography variant="h4" align='center' color="initial">
         Paquetes de sitios web cuidadosamente diseñados para empresas nuevas y existentes
       </Typography>
@@ -95,7 +95,7 @@ function Prices() {
         </Button>
       </Grid>
       <Grid item>
-        <Button variant="contained" color="primary">
+        <Button variant="contained" color="primary" disabled  >
           Ecommerce
         </Button>
       </Grid>

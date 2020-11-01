@@ -3,7 +3,7 @@ import { AppBar, Typography, IconButton, Toolbar, Button, Hidden, Container, Dra
 import { makeStyles } from '@material-ui/core/styles'
 import { Menu, Inbox } from '@material-ui/icons'
 import Modal from './Modal'
-
+import { Link, animateScroll as scroll } from 'react-scroll'
 
 const useStyles = makeStyles({
   grow: {
@@ -21,8 +21,9 @@ const useStyles = makeStyles({
     width: '100%',
     minWidth: '260px',
   },
-  text: {
-    color: 'white'
+  link: {
+    color: 'white',
+    fontSize: '14px'
   }
 })
 
@@ -49,37 +50,48 @@ function Navbar() {
     <AppBar position="sticky" className={classes.grow}>
       <Container maxWidth="lg">
         <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="menu">
+          <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => scroll.scrollToTop()}>
             <Typography variant="h6">
               Lsm Company
             </Typography>
           </IconButton>
           <div className={classes.navbarRight}>
             <Hidden smDown>
-              <IconButton aria-label="productos" >
-                <Typography variant="body2" className={classes.text}>Productos</Typography>
-              </IconButton>
-              <IconButton aria-label="productos" >
-                <Typography variant="body2" className={classes.text}>Paquetes</Typography>
-              </IconButton>
-              <IconButton aria-label="productos" >
-                <Typography variant="body2" className={classes.text}>Portafolio</Typography>
-              </IconButton>
-              <IconButton aria-label="productos" >
-                <Typography variant="body2" className={classes.text}>Sobre Nosotros</Typography>
-              </IconButton>
-              <IconButton aria-label="productos" >
-                <Typography variant="body2" className={classes.text}>Contactanos</Typography>
-              </IconButton> 
+              <Link to="services" smooth={true} duration={1000}>
+                <IconButton aria-label="productos" >
+                  <Typography variant="body2" className={classes.link}>Productos</Typography> 
+                </IconButton>
+              </Link>
+              <Link to="prices" smooth={true} duration={1000}>
+                <IconButton aria-label="productos" >
+                  <Typography variant="body2" className={classes.link}>Paquetes</Typography>
+                </IconButton>
+              </Link>
+              <Link to="portfolio" smooth={true} duration={1000}>
+                <IconButton aria-label="productos" >
+                  <Typography variant="body2" className={classes.link}>Portafolio</Typography>
+                </IconButton>
+              </Link>
+              <Link to="features" smooth={true} duration={1000}>
+                <IconButton aria-label="productos" >
+                  <Typography variant="body2" className={classes.link}>Sobre Nosotros</Typography>
+                </IconButton>
+              </Link>
+              <Link to="contactUs" smooth={true} duration={1000}>
+                <IconButton aria-label="productos" >
+                  <Typography variant="body2" className={classes.link}>Contactanos</Typography> 
+                </IconButton>
+              </Link> 
               
               <Button color="secondary" variant="contained" onClick={showModal}>Contratanos</Button>
-              <Modal show={show} close={closeModal}/>
             </Hidden>
             <Hidden mdUp>
               <IconButton onClick={handleDrawer} >
                 <Menu className={classes.menuIcon} />
               </IconButton>
             </Hidden>
+            
+            <Modal show={show} close={closeModal}/>
 
             <Drawer
               variant="temporary"
@@ -89,38 +101,48 @@ function Navbar() {
             >
               <div className={classes.drawer}>
                 <List component='nav'>
+                  <Link to="services" smooth={true} duration={1000}>  
+                    <ListItem button>
+                      <ListItemIcon>
+                        <Inbox />
+                      </ListItemIcon>
+                      <ListItemText primary="Productos" />
+                    </ListItem>
+                  </Link>
+                  <Link to="prices" smooth={true} duration={1000}>
+                    <ListItem button>
+                      <ListItemIcon>
+                        <Inbox />
+                      </ListItemIcon>
+                      <ListItemText primary="Paquetes" />
+                    </ListItem>
+                  </Link>
+                  <Link to="portfolio" smooth={true} duration={1000}>
+                    <ListItem button>
+                      <ListItemIcon>
+                        <Inbox />
+                      </ListItemIcon>
+                      <ListItemText primary="Portafolio" />
+                    </ListItem>
+                  </Link>
+                  <Link to="features" smooth={true} duration={1000}>
+                    <ListItem button>
+                      <ListItemIcon>
+                        <Inbox />
+                      </ListItemIcon>
+                      <ListItemText primary="Sobre Nosotros" />
+                    </ListItem>
+                  </Link>
+                  <Link to="contactUs" smooth={true} duration={1000}>
+                    <ListItem button>
+                      <ListItemIcon>
+                        <Inbox />
+                      </ListItemIcon>
+                      <ListItemText primary="Contactanos" />
+                    </ListItem>
+                  </Link>
                   <ListItem button>
-                    <ListItemIcon>
-                      <Inbox />
-                    </ListItemIcon>
-                    <ListItemText primary="Productos" />
-                  </ListItem>
-                  <ListItem button>
-                    <ListItemIcon>
-                      <Inbox />
-                    </ListItemIcon>
-                    <ListItemText primary="Paquetes" />
-                  </ListItem>
-                  <ListItem button>
-                    <ListItemIcon>
-                      <Inbox />
-                    </ListItemIcon>
-                    <ListItemText primary="Portafolio" />
-                  </ListItem>
-                  <ListItem button>
-                    <ListItemIcon>
-                      <Inbox />
-                    </ListItemIcon>
-                    <ListItemText primary="Sobre Nosotros" />
-                  </ListItem>
-                  <ListItem button>
-                    <ListItemIcon>
-                      <Inbox />
-                    </ListItemIcon>
-                    <ListItemText primary="Contactanos" />
-                  </ListItem>
-                  <ListItem button>
-                    <Button variant="contained" color="secondary">
+                    <Button variant="contained" color="secondary" onClick={showModal}>
                       Contratanos
                     </Button>
                   </ListItem>

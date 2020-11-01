@@ -18,8 +18,8 @@ function Services() {
   }
   return (
     <>
-      <AppBar position="static" color="primary">
-        <Tabs value={selectedTab} centered={true} onChange={handleChange} aria-label="services tabs" className={classes.tabs}>
+      <AppBar position="static" color="primary" id="services">
+        <Tabs value={selectedTab} centered={true} onChange={handleChange} variant="scrollable"  aria-label="services tabs" className={classes.tabs}>
           <Tab label="Sitios Web Responsive" />         
           <Tab label="Ecommerce" />         
           <Tab label="Sitios Web CMS" />         
