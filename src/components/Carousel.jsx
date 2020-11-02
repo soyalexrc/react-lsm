@@ -61,6 +61,7 @@ const useStyles = makeStyles(theme =>({
     justifyContent:'center'
   },
   text:{
+    color: 'white',
     [theme.breakpoints.down('md')]:{
       textAlign: 'center'
     },
