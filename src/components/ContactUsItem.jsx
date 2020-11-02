@@ -5,7 +5,8 @@ import { makeStyles } from '@material-ui/core/styles'
 const useStyles = makeStyles ({
   card:{
     display: 'flex',
-    justifyContent:'center'
+    justifyContent:'center',
+    marginBottom: '50px'
   },
   card__right:{
     display:'flex',

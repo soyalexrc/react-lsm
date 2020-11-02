@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, TextField } from '@material-ui/core'
 import db from '../Firebase'
-import Alert from './Alert'
+// import Alert from './Alert'
 // import { makeStyles } from '@material-ui/core/styles'
 
 // const useStyles = makeStyles({
@@ -16,12 +16,12 @@ function Modal({ show, close }) {
   const [email, setEmail] = useState('')
   const [country, setCountry] = useState('')
   const [message, setMessage] = useState('')
-  const [alertMessage, setAlertMessage] = useState(null)
+  // const [alertMessage, setAlertMessage] = useState(null)
 
 
   const handleSubmit = async() => {
-    await setAlertMessage(null)
-    console.log('seteado a null', alertMessage)
+    // await setAlertMessage(null)
+    // console.log('seteado a null', alertMessage)
     await db.collection('clientMessages')
     .add({
       firstName: firstName,
@@ -32,19 +32,19 @@ function Modal({ show, close }) {
       message: message
     })
     .then(() => {
-      // alert('tu mensaje se envio sactisfactoriamente!')
-      setAlertMessage({
-        type: 'success',
-        message: 'Excelente!, tu mensaje se envio. Te contactaremos en breve'
-      })
-      console.log('seteado a success', alertMessage)
+      alert('tu mensaje se envio sactisfactoriamente!')
+      // setAlertMessage({
+      //   type: 'success',
+      //   message: 'Excelente!, tu mensaje se envio. Te contactaremos en breve'
+      // })
+      // console.log('seteado a success', alertMessage)
     })
       .catch((error) => {
-        // alert(error.message)
-        setAlertMessage({
-          type: 'error',
-          message: error.message
-        })
+        alert(error.message)
+        // setAlertMessage({
+        //   type: 'error',
+        //   message: error.message
+        // })
       })
 
     setFirstName('')
@@ -67,7 +67,7 @@ function Modal({ show, close }) {
       <DialogContentText>
         Lorem ipsum Dolorum Botas del DolorXD, dejanos tus dudas o alguna idea que tengas para desarrollar una app  y con gusto te ayudaremos de la manera mas eficaz y eficiente posible
       </DialogContentText>
-      <form noValidate autoComplete='off'>
+      <form autoComplete='off'>
 
         <Grid container spacing={1}>
           <Grid item xs={12} sm={4}>
@@ -142,8 +142,8 @@ function Modal({ show, close }) {
         Send
       </Button>
     </DialogActions>
-      {alertMessage && 
-      <Alert type={alertMessage.type} message={alertMessage.message} autoClose={5000} />}
+      {/* {alertMessage && 
+      <Alert type={alertMessage.type} message={alertMessage.message} autoClose={5000} />} */}
   </Dialog>
   )
 }

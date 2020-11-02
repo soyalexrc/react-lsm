@@ -14,7 +14,7 @@ function Features() {
   const classes = useStyles()
 
   return (
-    <Container maxWidth="lg" className={classes.space}>
+    <Container maxWidth="lg" className={classes.space}id="features">
       <Typography variant="h4" align='center' color="initial">
         ¿Por que elegirnos?
       </Typography>
