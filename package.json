@@ -1,5 +1,6 @@
 {
   "name": "react-lsm",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,6 +10,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "firebase": "^7.24.0",
+    "firebase-tools": "^8.14.1",
     "react": "^16.13.1",
     "react-chatbot-kit": "^1.1.0",
     "react-dom": "^16.13.1",
