@@ -15,7 +15,6 @@ const useStyles = makeStyles(theme =>({
     backgroundImage: 'url( "https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Fimagen-carousel.png?alt=media&token=b11d738d-8431-4116-a8d8-3dbaa3d5a017")',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    zIndex: '10',
     height: '85vh',
     width: '100vw',
     // backgroundImage: 'url("https://www.publicdomainpictures.net/pictures/60000/velka/chevrons-stripe-colorful-background-1381350087B52.jpg")',
@@ -29,7 +28,6 @@ const useStyles = makeStyles(theme =>({
     height: '85vh',
     width: '100vw',
     backgroundSize: 'cover', 
-    zIndex: '100'
     // backgroundSize: 'cover',
     // backgroundImage: 'url("https://www.publicdomainpictures.net/pictures/60000/velka/chevrons-stripe-colorful-background-1381350087B52.jpg")',
     // backgroundRepeat: 'no-repeat',
@@ -42,7 +40,6 @@ const useStyles = makeStyles(theme =>({
     width: '100vw',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    zIndex: '1000'
     // backgroundRepeat: 'no-repeat',
     // objectFit: 'cover',
     // width: '100vw'

@@ -1,14 +1,48 @@
 import React, { useState } from 'react'
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, TextField } from '@material-ui/core'
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, TextField, Avatar } from '@material-ui/core'
 import db from '../Firebase'
 // import Alert from './Alert'
-// import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
+import { Cancel, Send, Person, Email, PhoneAndroid, PersonOutline, Language } from '@material-ui/icons';
 
-// const useStyles = makeStyles({
-  
-// })
+const useStyles = makeStyles({  
+  modalHeader:{
+    backgroundColor: 'lightblue',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    padding: '16px'
+  },
+  modal: {
+    '& .MuiPaper-root':{
+      borderRadius: '33px'
+    },
+    '& .MuiTextField-root':{
+      marginTop: '20px'
+    }
+  },
+  modalFooter:{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    padding: '16px'
+  },
+  form:{
+    '& .MuiGrid-item':{
+      display: 'flex',
+      alignItems: 'center',
+      '& .MuiSvgIcon-root':{
+        paddingRight: '8px',
+        marginTop: '30px',
+        fontSize: '40px'
+      }
+    }
+  }
+})
 
 function Modal({ show, close }) {
+  const classes = useStyles()
   // const [modalShow, setModalShow] = useState(true);
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -61,19 +95,23 @@ function Modal({ show, close }) {
   }
   
   return (
-    <Dialog open={show} onClose={close} aria-labelledby="form-dialog-title">
-    <DialogTitle id="form-dialog-title">Dejanos tus datos y tus comentarios!</DialogTitle>
+    <Dialog className={classes.modal} open={show} onClose={close} aria-labelledby="form-dialog-title">
+    <div className={classes.modalHeader}> 
+    <Avatar />
+    <DialogTitle  id="form-dialog-title">Hola Cibernauta, Puedo ayudarte?</DialogTitle>
+    </div>
     <DialogContent>
       <DialogContentText>
-        Lorem ipsum Dolorum Botas del DolorXD, dejanos tus dudas o alguna idea que tengas para desarrollar una app  y con gusto te ayudaremos de la manera mas eficaz y eficiente posible
+        Dejame Tus Datos
       </DialogContentText>
       <form autoComplete='off'>
 
-        <Grid container spacing={1}>
+        <Grid container className={classes.form} spacing={1}>
           <Grid item xs={12} sm={4}>
+            <Person />
             <TextField 
               id="firstName" 
-              label="First Name" 
+              label="Nombre" 
               fullWidth 
               // className={classes.input}
               value={firstName}
@@ -81,9 +119,10 @@ function Modal({ show, close }) {
             />
           </Grid>
           <Grid item xs={12} sm={4}>
+            <PersonOutline />
             <TextField 
               id="lastName" 
-              label="Last Name" 
+              label="Apellido" 
               fullWidth 
               // className={classes.input}
               value={lastName}
@@ -91,9 +130,10 @@ function Modal({ show, close }) {
             />
           </Grid>
           <Grid item xs={12} sm={4}>
+            <PhoneAndroid />
             <TextField 
               id="phoneNumber" 
-              label="Phone Number" 
+              label="Telefono" 
               type="number" 
               fullWidth 
               // className={classes.input}
@@ -102,6 +142,7 @@ function Modal({ show, close }) {
             />
           </Grid>
           <Grid item xs={12} sm={6}>
+            <Email />
             <TextField 
               id="email" 
               label="Email" 
@@ -112,9 +153,10 @@ function Modal({ show, close }) {
             />
           </Grid>
           <Grid item xs={12} sm={6}>
+            <Language />
             <TextField 
               id="country" 
-              label="Country" 
+              label="Pais" 
               fullWidth 
               // className={classes.input}
               value={country}
@@ -125,7 +167,7 @@ function Modal({ show, close }) {
 
         <TextField
           id="message"
-          label="Message"
+          label="Mensaje"
           multiline
           fullWidth
           rows={4}
@@ -134,12 +176,12 @@ function Modal({ show, close }) {
         />
       </form>
     </DialogContent>
-    <DialogActions>
-      <Button onClick={close} color="primary">
-        Cancel
+    <DialogActions className={classes.modalFooter}>
+      <Button onClick={close} color="primary"  fullWidth={true} endIcon={<Cancel/>}>
+        Cancelar
       </Button>
-      <Button onClick={handleSubmit} color="primary">
-        Send
+      <Button onClick={handleSubmit} color="primary"  fullWidth={true} endIcon={<Send/>}>
+        Enviar
       </Button>
     </DialogActions>
       {/* {alertMessage && 
