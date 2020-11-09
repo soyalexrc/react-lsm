@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, TextField, Avatar } from '@material-ui/core'
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, TextField, Avatar, IconButton, Link } from '@material-ui/core'
 import db from '../Firebase'
 // import Alert from './Alert'
 import { makeStyles } from '@material-ui/core/styles'
-import { Cancel, Send, Person, Email, PhoneAndroid, PersonOutline, Language } from '@material-ui/icons';
+import { Send, Close, WhatsApp, PhoneInTalk } from '@material-ui/icons';
+
 
 const useStyles = makeStyles({  
   modalHeader:{
     backgroundColor: 'lightblue',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
     padding: '16px'
   },
   modal: {
@@ -19,7 +20,11 @@ const useStyles = makeStyles({
     },
     '& .MuiTextField-root':{
       marginTop: '20px'
-    }
+    },
+    // '& .MuiDialogContent-root':{
+    //   overflow: 'hidden',
+    //   minHeight: ''
+    // }
   },
   modalFooter:{
     display: 'flex',
@@ -38,17 +43,36 @@ const useStyles = makeStyles({
         fontSize: '40px'
       }
     }
+  },
+  modalActions: {
+    display: 'flex',
+    justifyContent: 'center'
+  },
+  sendButton: {
+    borderRadius: '999px'
+  },
+  modalIcon: {
+    width: '30px',
+    marginTop: '35px',
+    marginRight: '15px'
+  },
+  avatar: {
+    fontSize: '36px',
+    minWidth: '180px',
+    '& img' :{
+      objectFit: 'contain'
+    }
   }
 })
 
 function Modal({ show, close }) {
   const classes = useStyles()
   // const [modalShow, setModalShow] = useState(true);
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
+  const [name, setName] = useState('')
+  // const [lastName, setLastName] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('')
   const [email, setEmail] = useState('')
-  const [country, setCountry] = useState('')
+  // const [country, setCountry] = useState('')
   const [message, setMessage] = useState('')
   // const [alertMessage, setAlertMessage] = useState(null)
 
@@ -58,11 +82,11 @@ function Modal({ show, close }) {
     // console.log('seteado a null', alertMessage)
     await db.collection('clientMessages')
     .add({
-      firstName: firstName,
-      lastName: lastName,
+      name: name,
+      // lastName: lastName,
       phoneNumber: phoneNumber,
       email: email,
-      country: country,
+      // country: country,
       message: message
     })
     .then(() => {
@@ -81,11 +105,11 @@ function Modal({ show, close }) {
         // })
       })
 
-    setFirstName('')
-    setLastName('')
+    setName('')
+    // setLastName('')
     setPhoneNumber('')
     setEmail('')
-    setCountry('')
+    // setCountry('') 
     setMessage('')
 
     // setModalShow(false)
@@ -97,8 +121,11 @@ function Modal({ show, close }) {
   return (
     <Dialog className={classes.modal} open={show} onClose={close} aria-labelledby="form-dialog-title">
     <div className={classes.modalHeader}> 
-    <Avatar />
-    <DialogTitle  id="form-dialog-title">Hola Cibernauta, Puedo ayudarte?</DialogTitle>
+    <Avatar className={classes.avatar} src="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Flsm-logo.png?alt=media&token=fe46cb1d-977b-430e-b457-d8fdaa5c7eb0" />
+    <DialogTitle  id="form-dialog-title">Hola Cibernauta,<br /> Puedo ayudarte?</DialogTitle>
+    <IconButton  onClick={close}>
+      <Close />
+    </IconButton>
     </div>
     <DialogContent>
       <DialogContentText>
@@ -107,18 +134,18 @@ function Modal({ show, close }) {
       <form autoComplete='off'>
 
         <Grid container className={classes.form} spacing={1}>
-          <Grid item xs={12} sm={4}>
-            <Person />
+          <Grid item xs={12} >
+            <img src="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fusuario.png?alt=media&token=d15ec870-8d15-4e5a-a0e8-14f42bb5f237" alt="" className={classes.modalIcon} />
             <TextField 
-              id="firstName" 
-              label="Nombre" 
+              id="name" 
+              label="Nombres" 
               fullWidth 
               // className={classes.input}
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </Grid>
-          <Grid item xs={12} sm={4}>
+          {/* <Grid item xs={12} sm={4}>
             <PersonOutline />
             <TextField 
               id="lastName" 
@@ -128,9 +155,9 @@ function Modal({ show, close }) {
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
             />
-          </Grid>
-          <Grid item xs={12} sm={4}>
-            <PhoneAndroid />
+          </Grid> */}
+          <Grid item xs={12} >
+            <img src="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2FRecurso-1.png?alt=media&token=47e44a82-2c74-4ea4-824b-b3f38612c24d" alt="" className={classes.modalIcon} />
             <TextField 
               id="phoneNumber" 
               label="Telefono" 
@@ -141,8 +168,8 @@ function Modal({ show, close }) {
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
           </Grid>
-          <Grid item xs={12} sm={6}>
-            <Email />
+          <Grid item xs={12} >
+            <img src="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2FCORREO.png?alt=media&token=b07021ac-194c-4bb3-8de0-d176d7833f56" alt="" className={classes.modalIcon} />
             <TextField 
               id="email" 
               label="Email" 
@@ -152,7 +179,7 @@ function Modal({ show, close }) {
               onChange={(e) => setEmail(e.target.value)}
             />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          {/* <Grid item xs={12} sm={6}>
             <Language />
             <TextField 
               id="country" 
@@ -162,7 +189,7 @@ function Modal({ show, close }) {
               value={country}
               onChange={(e) => setCountry(e.target.value)}
             />
-          </Grid>
+          </Grid> */}
         </Grid>
 
         <TextField
@@ -177,12 +204,24 @@ function Modal({ show, close }) {
       </form>
     </DialogContent>
     <DialogActions className={classes.modalFooter}>
-      <Button onClick={close} color="primary"  fullWidth={true} endIcon={<Cancel/>}>
+      {/* <Button onClick={close} color="primary"  fullWidth={true} endIcon={<Cancel/>}>
         Cancelar
-      </Button>
-      <Button onClick={handleSubmit} color="primary"  fullWidth={true} endIcon={<Send/>}>
+      </Button> */}
+      <Button onClick={handleSubmit} className={classes.sendButton} color="primary"  variant='contained' fullWidth={true} endIcon={<Send/>}>
         Enviar
       </Button>
+    </DialogActions>
+    <DialogActions className={classes.modalActions}>
+      <IconButton  onClick={() => console.log('hola')}>
+        <Link href="https://wa.me/51917902604"  target="_blank">
+          <WhatsApp fontSize='large'/>
+        </Link>
+      </IconButton>
+      <IconButton  onClick={() => console.log('chao')}>
+        <Link href="tel:+51917902604" target="_blank">
+          <PhoneInTalk fontSize='large'/>
+        </Link>
+      </IconButton>
     </DialogActions>
       {/* {alertMessage && 
       <Alert type={alertMessage.type} message={alertMessage.message} autoClose={5000} />} */}

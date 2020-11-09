@@ -115,24 +115,8 @@ const updateHover = hovering => ({
             </Grid>
             <Grid item xs={12} className={classes.verticalSpace}>
               <Button variant="contained" color="primary">
-                Order now
+                Comprar
               </Button>
-            </Grid>
-            <Grid item xs={6} className={classes.centerContent}> 
-              <IconButton>
-                <ForumIcon />
-                <Typography variant='body1' color='initial'>
-                  Live chat
-                </Typography>
-              </IconButton>
-            </Grid>
-            <Grid item xs={6} className={classes.centerContent}> 
-              <IconButton >
-                <PhoneInTalkIcon />
-                <Typography variant='body1' color='initial'>
-                +51 917 902 604
-                </Typography>
-              </IconButton>
             </Grid>
           </Grid>
         </CardContent>

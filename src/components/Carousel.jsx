@@ -1,10 +1,23 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Slider from 'react-slick'
-import { Grid, Typography } from '@material-ui/core'
+import { Grid, Typography, IconButton } from '@material-ui/core'
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import { Link } from 'react-scroll'
 // import Slide from './Slide'
 
 const useStyles = makeStyles(theme =>({
+  arrowIcon: {
+    position: 'absolute',
+    bottom: '100px',
+    left: '35px',
+    backgroundColor: 'black',
+    color:'white',
+    '&:hover' : {
+      color: 'black',
+      backgroundColor: 'white'
+    }
+  },
  space:{
     // marginBottom: '48px',
     // backgroundImage: 'url("https://www.publicdomainpictures.net/pictures/60000/velka/chevrons-stripe-colorful-background-1381350087B52.jpg")',
@@ -15,7 +28,7 @@ const useStyles = makeStyles(theme =>({
     backgroundImage: 'url( "https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Fimagen-carousel.png?alt=media&token=b11d738d-8431-4116-a8d8-3dbaa3d5a017")',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    height: '85vh',
+    height: '100vh',
     width: '100vw',
     // backgroundImage: 'url("https://www.publicdomainpictures.net/pictures/60000/velka/chevrons-stripe-colorful-background-1381350087B52.jpg")',
     // backgroundRepeat: 'no-repeat',
@@ -59,6 +72,7 @@ const useStyles = makeStyles(theme =>({
   },
   text:{
     color: 'white',
+    maxWidth: '556px',
     [theme.breakpoints.down('md')]:{
       textAlign: 'center'
     },
@@ -89,6 +103,7 @@ function Carousel() {
   }
 
   return (
+    <>
       <Slider {...settings} className={classes.space} id="hero">
         <div className={classes.slideOne}>
           <Grid container alignItems='center' justify='center' alignContent='center'className={classes.slideOne}>
@@ -99,10 +114,10 @@ function Carousel() {
             </Grid>
             <Grid item xs={12} md={6} className={classes.text}>
               <Typography variant="h3" color="initial">
-              Professional Web Design & Web Development
+              Diseño web profesional y desarrollo web
               </Typography>
               <Typography variant="h6" color="initial">
-              We leverage the strengths of each and every platform to build incredible solutions across apple devices iPhone, iPad, Apple Watch, and android devices. 
+              Aprovechamos las fortalezas de todas y cada una de las plataformas para crear soluciones increíbles en dispositivos Apple iPhone, iPad, Apple Watch y dispositivos Android.
               </Typography>
             </Grid>
           </Grid>
@@ -116,10 +131,10 @@ function Carousel() {
             </Grid>
             <Grid item xs={12} md={6} className={classes.text}>
               <Typography variant="h3" color="initial">
-              Next Level Web Design & Development
+              Diseño y desarrollo web de siguiente nivel
               </Typography>
               <Typography variant="h6" color="initial">
-              Our dedicated team of design and technology experts partner with you every step of the way of digital innovation independence.
+              Nuestro dedicado equipo de expertos en diseño y tecnología se asocia con usted en cada paso del camino hacia la independencia de la innovación digital.
               </Typography>
             </Grid>
           </Grid>
@@ -133,10 +148,10 @@ function Carousel() {
             </Grid>
             <Grid item xs={12} md={6} className={classes.text}>
               <Typography variant="h3" color="initial">
-              70% Increase In Convertion Rate
+              70% de aumento en la tasa de conversión
               </Typography>
               <Typography variant="h6" color="initial">
-              Effortlessly capture leads, build customer relationships and accept payments right from your website.
+              Capte clientes potenciales sin esfuerzo, establezca relaciones con los clientes y acepte pagos directamente desde su sitio web.
               </Typography>
             </Grid>
           </Grid>
@@ -157,6 +172,12 @@ function Carousel() {
           description="Effortlessly capture leads, build customer relationships and accept payments right from your website. "
         /> */}
       </Slider>
+      <Link to="services" smooth={true} duration={1000}>
+        <IconButton className={classes.arrowIcon}>
+          <ArrowDownwardIcon fontSize="large" />
+        </IconButton>
+      </Link>
+    </>
     )
 }
 

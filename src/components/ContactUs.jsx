@@ -33,7 +33,7 @@ function ContactUs() {
       <Container maxWidth='lg' className={classes.center}>
       <Grid container justify='center' alignItems='center'>
         <ContactUsItem title="Sin costo " subtitle="+58 424 422 8420" Icon={PhoneInTalkIcon} link="tel:+51917902604"/>
-        <ContactUsItem title="Solicitar " subtitle="Llamada de vuelta" Icon={PhoneAndroidIcon} link="https://wa.me/51917902604" />
+        <ContactUsItem title="Solicitar " subtitle="Llamada de vuelta" Icon={PhoneAndroidIcon}  />
         <ContactUsItem title="Enviar un correo a " subtitle="lsmbusiness@gmail.com" Icon={MailOutlineIcon} link="https://mail.google.com/mail/?view=cm&fs=1&to=lsmbusiness@gmail.com" />
         <ContactUsItem title="Empezar un" subtitle="Chat en vivo" Icon={ChatIcon} />
       </Grid>

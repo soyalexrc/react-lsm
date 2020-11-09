@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { AppBar, Typography, IconButton, Toolbar, Button, Hidden, Container, Drawer, List, ListItem, ListItemText, ListItemIcon } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import { Menu, Inbox } from '@material-ui/icons'
@@ -7,7 +7,8 @@ import { Link, animateScroll as scroll } from 'react-scroll'
 
 const useStyles = makeStyles({
   grow: {
-    flex:1
+    flex:1,
+    marginTop: '-64px'
   },
   navbarRight:{
     display: 'flex',
@@ -24,13 +25,39 @@ const useStyles = makeStyles({
   link: {
     color: 'white',
     fontSize: '14px'
-  }
+  },
+  contractButton: {
+    borderRadius: '999px'
+  },
+
 })
 
 function Navbar() {
   const classes = useStyles()
   const [show, setShow] = useState(false)
   const [open, setOpen] = useState(false)
+  const [navBackground, setNavBackground] = useState(false)
+  const navRef = useRef()
+
+  navRef.current = navBackground
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const show = window.scrollY > 100 
+      if (navRef.current !== show) {
+        setNavBackground(show)
+      }
+    }
+    document.addEventListener('scroll', handleScroll)
+    return () => {
+      document.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  let styles = {
+    backgroundColor: navBackground ? "blue" : "transparent",
+    transition: "400ms ease",
+  }
 
   const showModal = () => {
     setShow(true);
@@ -47,7 +74,7 @@ function Navbar() {
   
 
   return (
-    <AppBar position="sticky" className={classes.grow}>
+    <AppBar position="sticky" className={classes.grow} style={styles}>
       <Container maxWidth="lg">
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => scroll.scrollToTop()}>
@@ -83,7 +110,7 @@ function Navbar() {
                 </IconButton>
               </Link> 
               
-              <Button color="secondary" variant="contained" onClick={showModal}>Contratanos</Button>
+              <Button className={classes.contractButton} color="secondary" variant="contained" onClick={showModal}>Contratanos</Button>
             </Hidden>
             <Hidden mdUp>
               <IconButton onClick={handleDrawer} >
@@ -142,7 +169,7 @@ function Navbar() {
                     </ListItem>
                   </Link>
                   <ListItem button>
-                    <Button variant="contained" color="secondary" onClick={showModal}>
+                    <Button className={classes.contractButton} variant="contained" color="secondary" onClick={showModal}>
                       Contratanos
                     </Button>
                   </ListItem>
