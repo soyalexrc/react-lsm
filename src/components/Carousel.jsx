@@ -36,9 +36,9 @@ const useStyles = makeStyles(theme =>({
     // maxwidth: '100%'
   },
   slideTwo:{
-    backgroundImage: 'url( "https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Fimagen-carousel.png?alt=media&token=b11d738d-8431-4116-a8d8-3dbaa3d5a017")',
+    backgroundImage: 'url( "https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Fimagen-carousel-2.png?alt=media&token=d1657e7b-24d2-4fda-af25-cec7b0802e30")',
     backgroundRepeat: 'no-repeat',
-    height: '85vh',
+    height: '100vh',
     width: '100vw',
     backgroundSize: 'cover', 
     // backgroundSize: 'cover',
@@ -48,8 +48,8 @@ const useStyles = makeStyles(theme =>({
     // width: '100vw'
   },
   slideThree:{
-    backgroundImage: 'url("https://www.publicdomainpictures.net/pictures/60000/velka/chevrons-stripe-colorful-background-1381350087B52.jpg")',
-    height: '85vh',
+    backgroundImage: 'url("https://mdbootstrap.com/img/Photos/Others/images/79.jpg")',
+    height: '100vh',
     width: '100vw',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
@@ -123,7 +123,7 @@ function Carousel() {
           </Grid>
         </div>
         <div className={classes.slideTwo}>
-          <Grid container alignItems='center' justify='center' alignContent='center'className={classes.slideOne}>
+          <Grid container alignItems='center' justify='center' alignContent='center' className={classes.slideTwo}>
             <Grid item xs={12} md={6}>
               <figure className={classes.center}>
                 <img className={classes.image} src="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimagen-car-carousel-1.png?alt=media&token=b95fb856-c076-4e58-88b2-0d2b7cc29ec8" alt=""/>
@@ -140,7 +140,7 @@ function Carousel() {
           </Grid>
         </div>
         <div className={classes.slideThree}>
-          <Grid container alignItems='center' justify='center' alignContent='center'className={classes.slideOne}>
+          <Grid container alignItems='center' justify='center' alignContent='center'className={classes.slideThree}>
             <Grid item xs={12} md={6}>
               <figure className={classes.center}>
                 <img className={classes.image} src="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimg-carousel-3.png?alt=media&token=79b4b777-661d-4020-af3f-e6bd8940ed97" alt=""/>
