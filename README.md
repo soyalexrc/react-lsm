@@ -66,3 +66,35 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+
+
+DOCKER COMMANDS
+
+LOCAL (TERMINAL):
+
+build image:
+
+    docker build -t pruebacontainerluighi2693/lsm-frontend:latest .
+
+    docker login (en caso de no haberlo hecho)
+        username:   pruebacontainerluighi2693
+        password:   24995059
+
+push dockerhub:
+
+    docker push pruebacontainerluighi2693/lsm-frontend:latest
+
+
+
+IN SERVER (SSH)
+
+    docker pull pruebacontainerluighi2693/lsm-frontend:latest
+    docker run -d -p 80:80 pruebacontainerluighi2693/lsm-frontend:latest
+
+TO STOP OLD VERSION
+
+    docker ps
+    docker stop {docker_id}
+    docker rm -f {docker_id}
