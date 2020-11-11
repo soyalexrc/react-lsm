@@ -91,7 +91,7 @@ push dockerhub:
 IN SERVER (SSH)
 
     docker pull pruebacontainerluighi2693/lsm-frontend:latest
-    docker run -d -p 80:80 pruebacontainerluighi2693/lsm-frontend:latest
+    docker run -d -p 8081:80 pruebacontainerluighi2693/lsm-frontend:latest
 
 TO STOP OLD VERSION
 
