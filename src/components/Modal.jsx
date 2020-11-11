@@ -16,15 +16,15 @@ const useStyles = makeStyles({
   },
   modal: {
     '& .MuiPaper-root':{
+      overflowY: 'hidden',
       borderRadius: '33px'
     },
     '& .MuiTextField-root':{
       marginTop: '20px'
     },
-    // '& .MuiDialogContent-root':{
-    //   overflow: 'hidden',
-    //   minHeight: ''
-    // }
+    '& .MuiDialogContent-root':{
+      minHeight: '396px'
+    },
   },
   modalFooter:{
     display: 'flex',
@@ -62,6 +62,9 @@ const useStyles = makeStyles({
     '& img' :{
       objectFit: 'contain'
     }
+  },
+  whatsapp:{
+    color: '#25d366'
   }
 })
 
@@ -214,7 +217,7 @@ function Modal({ show, close }) {
     <DialogActions className={classes.modalActions}>
       <IconButton  onClick={() => console.log('hola')}>
         <Link href="https://wa.me/51917902604"  target="_blank">
-          <WhatsApp fontSize='large'/>
+          <WhatsApp className={classes.whatsapp} fontSize='large'/>
         </Link>
       </IconButton>
       <IconButton  onClick={() => console.log('chao')}>
