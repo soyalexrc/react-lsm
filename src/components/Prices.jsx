@@ -20,8 +20,8 @@ import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 
 const useStyles = makeStyles({
   space: {
-    marginBottom: '50px ',
-    marginTop: '50px',
+    marginBottom: '1.5rem ',
+    marginTop: '1.5rem',
   },
   imageContainer: {
     display: 'flex', 
@@ -32,8 +32,11 @@ const useStyles = makeStyles({
     height:'65px'
   },
   container: {
-    marginBottom: '150px',
-    marginTop: '150px'
+    marginBottom: '3rem',
+    marginTop: '3rem'
+  },
+  specialFeature:{
+    borderRight: '1px solid lightgray'
   }
 })
 
@@ -156,6 +159,9 @@ function Prices() {
       </PricesSlide>
     </Slider>
 
+      <Typography variant="h4" align='center' color="initial">
+        Caracteristicas claves
+      </Typography>
       <Grid 
         className={classes.container}
         container
@@ -165,7 +171,7 @@ function Prices() {
         alignContent="center"
         wrap='wrap'
         >
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={4} className={classes.specialFeature}>
             <div className={classes.imageContainer}>
               <img className={classes.img} src="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Fsello.png?alt=media&token=a5c23ef6-d3a8-492e-ab8d-02c95e163484%20alt=" alt=""/>
             </div>
@@ -173,7 +179,7 @@ function Prices() {
           Garantía de satisfacción del 100%
           </Typography>
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={4} className={classes.specialFeature} >
             <div className={classes.imageContainer}>
               <img className={classes.img} src="https://images.vexels.com/media/users/3/151682/isolated/preview/4b0d15f5752398c439dee306fc58d821-icono-de-diamante-negro-by-vexels.png" alt=""/>
             </div>
@@ -181,7 +187,7 @@ function Prices() {
           Garantía de diseño único
           </Typography>
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={4} >
             <div className={classes.imageContainer}>
               <img className={classes.img} src="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Fpluma.png?alt=media&token=6ab0193a-01b8-4627-92c9-6513e5da7f19" alt=""/>
             </div>

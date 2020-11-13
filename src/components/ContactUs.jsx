@@ -11,6 +11,8 @@ const useStyles = makeStyles ((theme) => ({
   },
   padding:{
     paddingBottom:'50px',
+    fontSize:'2.5rem',
+    fontWeight: '700'
   },
   card:{
     display: 'flex',
@@ -31,6 +33,10 @@ const useStyles = makeStyles ((theme) => ({
       margin: theme.spacing(1),
       width: '25ch',
     },
+  },
+  text:{
+    fontSize: '1.25rem',
+    fontWeight: '300'
   }
 
 }))
@@ -74,7 +80,7 @@ function ContactUs() {
       <Typography variant="h4" align='center' color="initial" className={classes.padding}>
         Conéctese con nosotros para obtener una cotización personalizada en su proyecto web hoy!
       </Typography>
-      <Typography variant="h6" align='center' color="initial" >
+      <Typography variant="h6" align='center' color="initial" className={classes.text} >
         Si esta interesado en hablar con nuestro representante de atención al cliente sobre un próximo proyecto, ll´menos de inmediato. Conéctemos y aclaremos sus interrogantes de una vez por todas.
       </Typography>
       </Container>

@@ -55,7 +55,7 @@ function Navbar() {
   }, [])
 
   let styles = {
-    backgroundColor: navBackground ? "blue" : "transparent",
+    backgroundColor: navBackground ? "#330033 " : "transparent",
     transition: "400ms ease",
   }
 
@@ -78,9 +78,7 @@ function Navbar() {
       <Container maxWidth="lg">
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => scroll.scrollToTop()}>
-            <Typography variant="h6">
-              Lsm Company
-            </Typography>
+            <img src="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Flsm-logo.png?alt=media&token=fe46cb1d-977b-430e-b457-d8fdaa5c7eb0" alt=""/>
           </IconButton>
           <div className={classes.navbarRight}>
             <Hidden smDown>

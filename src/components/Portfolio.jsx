@@ -26,7 +26,7 @@ const useStyles = makeStyles({
         left: '28%',
         zIndex: 99,
       },
-    },
+    }
   },
   image:{
     objectFit:'contain',

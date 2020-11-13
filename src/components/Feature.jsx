@@ -11,6 +11,16 @@ const useStyles = makeStyles({
   figure:{
     display: 'flex',
     justifyContent: 'center'
+  },
+  feature: {
+    maxWidth: '270px'
+  },
+  title:{
+    fontSize: '1.25rem',
+    fontWeight: '700'
+  },
+  text:{
+    fontSize: '1rem'
   }
 })
 
@@ -30,16 +40,16 @@ const updateHover = hovering => ({
 })
 
   return (
-    <Grid item xs={12} sm={6} md={4} lg={3}>
+    <Grid className={classes.feature} item xs={12} sm={6} md={4} lg={3}>
       <animated.div style={springStyles} onMouseEnter={ () => set(updateHover(true)) } onMouseLeave={ () => set(updateHover(false)) }>
         <figure className={classes.figure}>
           <img className={classes.image} src={image} alt={title}/>
         </figure>
 
-        <Typography variant="h5" color="initial" align="center">
+        <Typography variant="h5" color="initial" align="center" className={classes.title}>
           {title}
         </Typography>
-        <Typography variant="body2" color="initial" align="center">
+        <Typography variant="body2" color="initial" align="center" className={classes.text}>
           {description}
         </Typography>
       </animated.div>
