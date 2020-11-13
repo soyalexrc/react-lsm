@@ -95,6 +95,8 @@ IN SERVER (SSH)
 
 TO STOP OLD VERSION
 
-    docker ps
-    docker stop {docker_id}
-    docker rm -f {docker_id}
+    docker ps (lista los contenedores)
+    docker stop {docker_id} (detiene un contendor identificado con el id)
+    docker rm -f {docker_id} (remueve un contendor identificado con el id)
+    docker image ps (lista las imagenes)
+    docker image rm -f {image_id} (remueve la imagen identificado con el id)
