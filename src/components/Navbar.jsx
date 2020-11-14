@@ -8,7 +8,10 @@ import { Link, animateScroll as scroll } from 'react-scroll'
 const useStyles = makeStyles({
   grow: {
     flex:1,
-    marginTop: '-64px'
+    marginTop: '-64px',
+    '& img':{
+      maxWidth:"150px"
+    }
   },
   navbarRight:{
     display: 'flex',
@@ -78,7 +81,7 @@ function Navbar() {
       <Container maxWidth="lg">
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => scroll.scrollToTop()}>
-            <img src="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Flsm-logo.png?alt=media&token=fe46cb1d-977b-430e-b457-d8fdaa5c7eb0" alt=""/>
+            <img src="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Flogo-2.0.png?alt=media&token=c114218a-ff66-4b83-80ec-78e64dba6210" alt=""/>
           </IconButton>
           <div className={classes.navbarRight}>
             <Hidden smDown>

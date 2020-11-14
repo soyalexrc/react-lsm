@@ -18,44 +18,26 @@ const useStyles = makeStyles(theme =>({
       backgroundColor: 'white'
     }
   },
- space:{
-    // marginBottom: '48px',
-    // backgroundImage: 'url("https://www.publicdomainpictures.net/pictures/60000/velka/chevrons-stripe-colorful-background-1381350087B52.jpg")',
-    // backgroundRepeat: 'no-repeat',
-    // height: '88vh',
-  },
   slideOne:{
-    backgroundImage: 'url( "https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Fimagen-carousel.png?alt=media&token=b11d738d-8431-4116-a8d8-3dbaa3d5a017")',
+    backgroundImage: 'url( "https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Ffondo-carousel-1.jpg?alt=media&token=b5876d20-11e3-4bf4-82a4-671e0fda9692")',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     height: '100vh',
     width: '100vw',
-    // backgroundImage: 'url("https://www.publicdomainpictures.net/pictures/60000/velka/chevrons-stripe-colorful-background-1381350087B52.jpg")',
-    // backgroundRepeat: 'no-repeat',
-    // objectFit: 'contain',
-    // maxwidth: '100%'
   },
   slideTwo:{
-    backgroundImage: 'url( "https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Fimagen-carousel-2.png?alt=media&token=d1657e7b-24d2-4fda-af25-cec7b0802e30")',
+    backgroundImage: 'url( "https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Ffondo-carousel-2.jpg?alt=media&token=b580d99b-9078-44a1-aedc-6866d3ad1b18")',
     backgroundRepeat: 'no-repeat',
     height: '100vh',
     width: '100vw',
     backgroundSize: 'cover', 
-    // backgroundSize: 'cover',
-    // backgroundImage: 'url("https://www.publicdomainpictures.net/pictures/60000/velka/chevrons-stripe-colorful-background-1381350087B52.jpg")',
-    // backgroundRepeat: 'no-repeat',
-    // objectFit: 'cover',
-    // width: '100vw'
   },
   slideThree:{
-    backgroundImage: 'url("https://mdbootstrap.com/img/Photos/Others/images/79.jpg")',
+    backgroundImage: 'url("https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Ffondo-carousel-3.jpg?alt=media&token=bf8a22f6-09df-41ef-bd85-2b2ead06b571")',
     height: '100vh',
     width: '100vw',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    // backgroundRepeat: 'no-repeat',
-    // objectFit: 'cover',
-    // width: '100vw'
   },
   image:{
     minWidth:'400px',
@@ -72,6 +54,21 @@ const useStyles = makeStyles(theme =>({
   },
   text:{
     color: 'white',
+    maxWidth: '556px',
+    [theme.breakpoints.down('md')]:{
+      textAlign: 'center'
+    },
+    [theme.breakpoints.down('xs')]:{
+      '& .MuiTypography-h3':{
+        fontSize: '24px'
+      },
+      '& .MuiTypography-h6':{
+        fontSize: '12px'
+      }
+    }
+  },
+  textBlack:{
+    color: 'black',
     maxWidth: '556px',
     [theme.breakpoints.down('md')]:{
       textAlign: 'center'
@@ -104,7 +101,7 @@ function Carousel() {
 
   return (
     <>
-      <Slider {...settings} className={classes.space} id="hero">
+      <Slider {...settings} id="hero">
         <div className={classes.slideOne}>
           <Grid container alignItems='center' justify='center' alignContent='center'className={classes.slideOne}>
             <Grid item xs={12} md={6}>
@@ -146,7 +143,7 @@ function Carousel() {
                 <img className={classes.image} src="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimg-carousel-3.png?alt=media&token=79b4b777-661d-4020-af3f-e6bd8940ed97" alt=""/>
               </figure>
             </Grid>
-            <Grid item xs={12} md={6} className={classes.text}>
+            <Grid item xs={12} md={6} className={classes.textBlack}>
               <Typography variant="h3" color="initial">
               70% de aumento en la tasa de conversión
               </Typography>
