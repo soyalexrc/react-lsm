@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, TextField, Avatar, IconButton, Link } from '@material-ui/core'
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, TextField, IconButton, Link } from '@material-ui/core'
 import db from '../Firebase'
 // import Alert from './Alert'
 import { makeStyles } from '@material-ui/core/styles'
@@ -16,7 +16,7 @@ const useStyles = makeStyles({
   },
   modal: {
     '& .MuiPaper-root':{
-      overflowY: 'hidden',
+      // overflowY: 'hidden',
       borderRadius: '33px'
     },
     '& .MuiTextField-root':{

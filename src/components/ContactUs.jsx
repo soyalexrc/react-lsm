@@ -12,21 +12,31 @@ const useStyles = makeStyles ((theme) => ({
   padding:{
     paddingBottom:'50px',
     fontSize:'2.5rem',
-    fontWeight: '700'
+    fontWeight: '700',
+    [theme.breakpoints.down('sm')]:{
+
+      fontSize: '1.75rem'
+    }
   },
   card:{
     display: 'flex',
     justifyContent:'center',
-    marginBottom: '50px'
+    marginBottom: '50px',
+    '&:hover':{
+      '& .MuiIconButton-root':{
+        color: 'green'
+    }
+    }
   },
   card__right:{
     display:'flex',
     flexDirection:'column',
     paddingLeft: '8px'
-  },
+  },  
   border:{
     borderRight: '1px solid grey',
-    paddingRight: '8px'
+    paddingRight: '8px',
+    fontSize: '3rem',
   },
   modalContainer:{
     display: 'flex',
@@ -40,7 +50,10 @@ const useStyles = makeStyles ((theme) => ({
   },
   text:{
     fontSize: '1.25rem',
-    fontWeight: '300'
+    fontWeight: '300',
+    [theme.breakpoints.down('sm')]:{
+      fontSize: '1rem'
+    }
   }
 
 }))

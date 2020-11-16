@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   image:{
     maxWidth: '700px',
     [theme.breakpoints.down('sm')]:{
-      maxWidth: '400px'
+      maxWidth: '330px'
     }
   },
   imageContainer:{

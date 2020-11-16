@@ -3,7 +3,7 @@ import Container from '@material-ui/core/Container'
 import { GridList, GridListTile, Typography, Grid, IconButton } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   container:{
     padding: 0,
     display: 'flex',
@@ -31,6 +31,9 @@ const useStyles = makeStyles({
   image:{
     objectFit:'contain',
     borderRadius: '999px',
+    [theme.breakpoints.down('sm')]:{
+      maxWidth: '280px'
+    }
   },
   space:{
     paddingBottom:'50px',
@@ -46,7 +49,7 @@ const useStyles = makeStyles({
       padding: '12px',
       overflow: 'hidden'
     },
-  })
+  }))
 
 const tileData = [
   {

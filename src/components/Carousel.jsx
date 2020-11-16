@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme =>({
     backgroundSize: 'cover', 
   },
   slideThree:{
-    backgroundImage: 'url("https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Ffondo-carousel-3.jpg?alt=media&token=bf8a22f6-09df-41ef-bd85-2b2ead06b571")',
+    backgroundImage: 'url("https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Ffondo-carousel-4.jpg?alt=media&token=2edf6c89-276c-45f0-aa62-ded707d268cd")',
     height: '100vh',
     width: '100vw',
     backgroundRepeat: 'no-repeat',
@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme =>({
     maxWidth: '600px',
     [theme.breakpoints.down('sm')]:{
       minWidth: '300px',
-      maxWidth:'400px'
+      maxWidth:'330px'
     }
 
   },

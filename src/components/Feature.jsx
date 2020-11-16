@@ -13,7 +13,8 @@ const useStyles = makeStyles({
     justifyContent: 'center'
   },
   feature: {
-    maxWidth: '270px'
+    maxWidth: '270px',
+    margin: '1.25rem'
   },
   title:{
     fontSize: '1.25rem',
