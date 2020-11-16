@@ -22,6 +22,9 @@ const useStyles = makeStyles({
   space: {
     marginBottom: '1.5rem ',
     marginTop: '1.5rem',
+    '& .MuiTypography-h4':{
+      marginTop: '7rem'
+    }
   },
   imageContainer: {
     display: 'flex', 

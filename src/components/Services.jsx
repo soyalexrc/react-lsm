@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
-import Service from './Service'
+// import Service from './Service'
 import { Tab, Tabs, AppBar, Container, Grid, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import { AdjustOutlined } from '@material-ui/icons';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   tabs:{
     flexWrap: 'wrap'
   },
   image:{
-    maxWidth: '700px'
+    maxWidth: '700px',
+    [theme.breakpoints.down('sm')]:{
+      maxWidth: '400px'
+    }
   },
   imageContainer:{
     display: 'flex',
@@ -45,7 +48,7 @@ const useStyles = makeStyles({
     fontSize: '2.5rem',
     fontWeight: '700'
   }
-})
+}))
 
 function Services() {
   const classes = useStyles()

@@ -11,7 +11,7 @@ const useStyles = makeStyles({
     backgroundColor: 'lightblue',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
     padding: '16px'
   },
   modal: {
@@ -56,15 +56,13 @@ const useStyles = makeStyles({
     marginTop: '35px',
     marginRight: '15px'
   },
-  avatar: {
-    fontSize: '36px',
-    minWidth: '180px',
-    '& img' :{
-      objectFit: 'contain'
-    }
-  },
   whatsapp:{
     color: '#25d366'
+  },
+  img: {
+    width: '7rem',
+    margin: '-1rem'
+
   }
 })
 
@@ -93,7 +91,7 @@ function Modal({ show, close }) {
       message: message
     })
     .then(() => {
-      alert('tu mensaje se envio sactisfactoriamente!')
+      alert( "Su mensaje ha sido enviado con exito!")
       // setAlertMessage({
       //   type: 'success',
       //   message: 'Excelente!, tu mensaje se envio. Te contactaremos en breve'
@@ -124,7 +122,7 @@ function Modal({ show, close }) {
   return (
     <Dialog className={classes.modal} open={show} onClose={close} aria-labelledby="form-dialog-title">
     <div className={classes.modalHeader}> 
-    <Avatar className={classes.avatar} src="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Flsm-logo.png?alt=media&token=fe46cb1d-977b-430e-b457-d8fdaa5c7eb0" />
+    <img className={classes.img} src="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Flogo-without-letters.png?alt=media&token=69e1353e-eacf-4719-a76d-2db5ef0164fa" alt="" />
     <DialogTitle  id="form-dialog-title">Hola Cibernauta,<br /> Puedo ayudarte?</DialogTitle>
     <IconButton  onClick={close}>
       <Close />

@@ -29,10 +29,14 @@ const useStyles = makeStyles ((theme) => ({
     paddingRight: '8px'
   },
   modalContainer:{
-    '& > *': {
-      margin: theme.spacing(1),
-      width: '25ch',
-    },
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  countryCode: {
+    maxWidth: '40px',
+    marginTop: '1rem',
+    marginRight: '2rem'
   },
   text:{
     fontSize: '1.25rem',
@@ -44,7 +48,6 @@ const useStyles = makeStyles ((theme) => ({
 function ContactUs() {
   const classes = useStyles() 
   const [ open, setOpen ] = useState(false)
-  const [ country, setCountry ] = useState('')
   const [ phoneNumber, setPhoneNumber ] = useState('')
 
   const handleOpenModal = () => {
@@ -59,16 +62,14 @@ function ContactUs() {
     await db.collection('callbackClients')
     .add({
       phoneNumber: phoneNumber,
-      country: country
     })
     .then(() => {
-      alert('Excelente!, atento a tu celular porque te llamaremos pronto!')
+      alert( "Su mensaje ha sido enviado con exito!")
     })
     .catch((error) => {
       alert(error.message)
     })
 
-    setCountry('')
     setPhoneNumber('')
 
     await handleCloseModal()
@@ -153,14 +154,10 @@ function ContactUs() {
           </DialogContentText>
           <div className={classes.modalContainer}>
             <TextField
-              autoFocus
-              margin="dense"
-              id="countryCode"
-              label="Pais"
-              type="text"
-              value={country}
-              onChange={e => setCountry(e.target.value)}
-              fullWidth
+              className={classes.countryCode}
+              disabled
+              id="standard-disaibled"
+              defaultValue='+58'
             />
             <TextField
               autoFocus
@@ -170,7 +167,6 @@ function ContactUs() {
               type="number"
               value={phoneNumber}
               onChange={e => setPhoneNumber(e.target.value)}
-              fullWidth
             />
           </div>
         </DialogContent>
