@@ -6,8 +6,8 @@ import { Card, CardContent, IconButton ,CardMedia, Grid, Typography, Button} fro
 import { makeStyles } from '@material-ui/core/styles'
 // import LanguageIcon from '@material-ui/icons/Language';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
-import ForumIcon from '@material-ui/icons/Forum';
-import PhoneInTalkIcon from '@material-ui/icons/PhoneInTalk';
+// import ForumIcon from '@material-ui/icons/Forum';
+// import PhoneInTalkIcon from '@material-ui/icons/PhoneInTalk';
 
 
 const useStyles = makeStyles( {

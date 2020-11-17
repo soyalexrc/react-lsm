@@ -4,9 +4,10 @@ import db from '../Firebase'
 // import Alert from './Alert'
 import { makeStyles } from '@material-ui/core/styles'
 import { Send, Close, WhatsApp, PhoneInTalk } from '@material-ui/icons';
+import '../index.css'
 
 
-const useStyles = makeStyles({  
+const useStyles = makeStyles((theme) => ({  
   modalHeader:{
     backgroundColor: 'lightblue',
     display: 'flex',
@@ -15,6 +16,7 @@ const useStyles = makeStyles({
     padding: '16px'
   },
   modal: {
+
     '& .MuiPaper-root':{
       // overflowY: 'hidden',
       borderRadius: '33px'
@@ -61,10 +63,12 @@ const useStyles = makeStyles({
   },
   img: {
     width: '7rem',
-    margin: '-1rem'
-
+    margin: '-1rem',
+    [theme.breakpoints.down('sm')]:{
+      width: '4.5rem'
+    }
   }
-})
+}))
 
 function Modal({ show, close }) {
   const classes = useStyles()

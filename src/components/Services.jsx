@@ -60,7 +60,7 @@ function Services() {
   return (
     <>
       <AppBar position="static" color="primary" id="services">
-        <Tabs value={selectedTab} centered={true} onChange={handleChange} variant="scrollable"  aria-label="services tabs" className={classes.tabs}>
+        <Tabs value={selectedTab} c onChange={handleChange} variant="scrollable"  aria-label="services tabs" className={classes.tabs}>
           <Tab label="Sitios Web Responsive" />         
           <Tab label="Ecommerce" />         
           <Tab label="Sitios Web CMS" />         

@@ -2,7 +2,7 @@ import React from 'react'
 import Slider from 'react-slick'
 import { makeStyles } from '@material-ui/core/styles'
 import PricesSlide from './PricesSlide'
-import { Button, Container, Grid, Typography, IconButton } from '@material-ui/core'
+import { Button, Container, Grid, Typography } from '@material-ui/core'
 import PricesSlideFeature from './PricesSlideFeature'
 import WebIcon from '@material-ui/icons/Web';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';

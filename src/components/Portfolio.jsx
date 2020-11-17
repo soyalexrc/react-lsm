@@ -122,7 +122,7 @@ function Portfolio() {
         {tileData.map((tile) => (
           <Grid item xs={12} sm={6} md={4} key={tile.id}> 
             <GridListTile cols={tile.cols || 1} className={classes.gridTile}>
-              <Typography variant="h6" color="secondaryText" align="center">
+              <Typography variant="h6" color="textSecondary" align="center">
                 {tile.title}
               </Typography>
               <IconButton onClick={() => window.open(tile.url)}>

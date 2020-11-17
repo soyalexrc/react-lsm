@@ -95,7 +95,7 @@ function ContactUs() {
         Conéctese con nosotros para obtener una cotización personalizada en su proyecto web hoy!
       </Typography>
       <Typography variant="h6" align='center' color="initial" className={classes.text} >
-        Si esta interesado en hablar con nuestro representante de atención al cliente sobre un próximo proyecto, ll´menos de inmediato. Conéctemos y aclaremos sus interrogantes de una vez por todas.
+        Si esta interesado en hablar con nuestro representante de atención al cliente sobre un próximo proyecto, contactenos de inmediato. Conéctemos y aclaremos sus interrogantes de una vez por todas.
       </Typography>
       </Container>
       <Container maxWidth='lg' className={classes.center}>

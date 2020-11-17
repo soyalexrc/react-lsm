@@ -23,3 +23,14 @@ react-chatbot-kit-chat-container {
   bottom: 69px!important;
   right: 10px!important;
 }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .MuiDialog-paperScrollPaper::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .MuiDialog-paperScrollPaper {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
