@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Container, Grid, Typography, Link, IconButton, Dialog, DialogTitle, DialogContent, DialogContentText, TextField, DialogActions, Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import { MailOutline, PhoneAndroid, PhoneInTalk, WhatsApp } from '@material-ui/icons'
+import { MailOutline, PhoneAndroid, PhoneInTalk, SettingsSystemDaydreamOutlined, WhatsApp } from '@material-ui/icons'
 import db from '../Firebase'
 
 const useStyles = makeStyles ((theme) => ({
@@ -44,10 +44,15 @@ const useStyles = makeStyles ((theme) => ({
     paddingRight: '8px',
     fontSize: '3rem',
   },
-  modalContainer:{
+  modalCallContainer:{
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  modalMailContainer:{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-evenly'
   },
   countryCode: {
     maxWidth: '40px',
@@ -66,18 +71,28 @@ const useStyles = makeStyles ((theme) => ({
 
 function ContactUs() {
   const classes = useStyles() 
-  const [ open, setOpen ] = useState(false)
+  const [ openCallModal, setOpenCallModal ] = useState(false)
+  const [ openMailModal, setOpenMailModal ] = useState(false)
   const [ phoneNumber, setPhoneNumber ] = useState('')
+  const [ name, setName ] = useState('')
+  const [ email, setEmail ] = useState('')
 
-  const handleOpenModal = () => {
-    setOpen(true)
+  const handleOpenCallModal = () => {
+    setOpenCallModal(true)
   }
   
-  const handleCloseModal = () => {
-    setOpen(false)
+  const handleCloseCallModal = () => {
+    setOpenCallModal(false)
+  }
+  const handleOpenMailModal = () => {
+    setOpenMailModal(true)
+  }
+  
+  const handleCloseMailModal= () => {
+    setOpenMailModal(false)
   }
 
-  const handleSubmit = async() => {
+  const handleSubmitCallModal = async() => {
     await db.collection('callbackClients')
     .add({
       phoneNumber: phoneNumber,
@@ -91,7 +106,26 @@ function ContactUs() {
 
     setPhoneNumber('')
 
-    await handleCloseModal()
+    await handleCloseCallModal()
+  }
+
+  const handleSubmitMailModal = async() => {
+    await db.collection('requestClientsMail')
+    .add({
+      email: email,
+      name, name,
+    })
+    .then(() => {
+      alert( "Te hemos enviado un correo!, por favor revisa tu bandeja de entrada")
+    })
+    .catch((error) => {
+      alert(error.message)
+    })
+
+    setName('')
+    setEmail('')
+
+    await handleCloseMailModal()
   }
 
   return (
@@ -123,7 +157,7 @@ function ContactUs() {
           </div>
         </Grid>
         <Grid item xs={12} sm={6} md={3} className={classes.card}>
-            <IconButton onClick={handleOpenModal}>
+            <IconButton onClick={handleOpenCallModal}>
                 <PhoneAndroid fontSize='large' className={classes.border}/>
             </IconButton>
           <div className={classes.card__right}>
@@ -136,11 +170,9 @@ function ContactUs() {
           </div>
         </Grid>
         <Grid item xs={12} sm={6} md={3} className={classes.card}>
-          <Link href="https://mail.google.com/mail/?view=cm&fs=1&to=lsmbusiness@gmail.com" target="_blank">
-            <IconButton>
+            <IconButton onClick={handleOpenMailModal}>
                 <MailOutline fontSize='large' className={classes.border}/>
             </IconButton>
-          </Link>
           <div className={classes.card__right}>
             <Typography variant="h5" color="initial">
               Enviar un correo a
@@ -167,7 +199,7 @@ function ContactUs() {
         </Grid>
       </Grid>
     </Container>
-    <Dialog open={open} onClose={handleCloseModal} aria-labelledby="form-dialog-title">
+    <Dialog open={openCallModal} onClose={handleCloseCallModal} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Hola!</DialogTitle>
         <DialogContent>
           <DialogContentText>
@@ -192,10 +224,50 @@ function ContactUs() {
           </div>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleCloseModal} color="primary">
+          <Button onClick={handleCloseCallModal} color="primary">
             Cancelar
           </Button>
-          <Button onClick={handleSubmit} color="primary">
+          <Button onClick={handleSubmitCallModal} color="primary">
+            Enviar
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+
+
+    <Dialog open={openMailModal} onClose={handleCloseMailModal} aria-labelledby="form-dialog-title">
+        <DialogTitle id="form-dialog-title">Hola!</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Dejame tu nombre y tu correo electronico y te enviaremos de inmediato un correo con toda la informacion necesaria para que tomes la mejor desicion, te esperamos!
+          </DialogContentText>
+          <div className={classes.modalMailContainer}>
+            <TextField
+              // className={}
+              autoFocus
+              margin="dense"
+              id="name"
+              label="name"
+              type="text"
+              value={name}
+              onChange={e => setName(e.target.value)}
+            />
+            <TextField
+              autoFocus
+              margin="dense"
+              id="email"
+              label="email"
+              type="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+            />
+          </div>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseMailModal} color="primary">
+            Cancelar
+          </Button>
+          <Button onClick={handleSubmitMailModal} color="primary">
             Enviar
           </Button>
         </DialogActions>

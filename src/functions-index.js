@@ -10,7 +10,7 @@ const transport = nodemailer.createTransport({
   }
 })
 
-exports.welcomeMail = functions.firestore.document("callbackClients/{id}").onCreate((snap, context) => {
+exports.welcomeMail = functions.firestore.document("requestClientsMail/{id}").onCreate((snap, context) => {
   const email = snap.data().email
   const name = snap.data().name
   return sendWelcomeMail(email, name)
