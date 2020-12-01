@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, TextField, IconButton, Link } from '@material-ui/core'
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, TextField, IconButton, /*Link*/ } from '@material-ui/core'
 import db from '../Firebase'
 // import Alert from './Alert'
 import { makeStyles } from '@material-ui/core/styles'
-import { Send, Close, WhatsApp, PhoneInTalk } from '@material-ui/icons';
+import { Send, Close, /*WhatsApp, PhoneInTalk */ } from '@material-ui/icons';
 import '../index.css'
 
 
@@ -216,7 +216,7 @@ function Modal({ show, close }) {
         Enviar
       </Button>
     </DialogActions>
-    <DialogActions className={classes.modalActions}>
+    {/* <DialogActions className={classes.modalActions}>
       <IconButton  onClick={() => console.log('hola')}>
         <Link href="https://wa.me/51917902604"  target="_blank">
           <WhatsApp className={classes.whatsapp} fontSize='large'/>
@@ -227,7 +227,7 @@ function Modal({ show, close }) {
           <PhoneInTalk fontSize='large'/>
         </Link>
       </IconButton>
-    </DialogActions>
+    </DialogActions> */}
       {/* {alertMessage && 
       <Alert type={alertMessage.type} message={alertMessage.message} autoClose={5000} />} */}
   </Dialog>

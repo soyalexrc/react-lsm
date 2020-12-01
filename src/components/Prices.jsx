@@ -18,13 +18,22 @@ import PersonIcon from '@material-ui/icons/Person';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles( (theme) => ({
   space: {
     marginBottom: '1.5rem ',
     marginTop: '1.5rem',
     '& .MuiTypography-h4':{
       marginTop: '7rem'
-    }
+    },
+    '& .slick-arrow':{
+      '&:before':{
+        color:'black',
+        fontSize: '2rem',
+        [theme.breakpoints.down('sm')]:{
+          display:'none'
+        }
+      }
+    },
   },
   imageContainer: {
     display: 'flex', 
@@ -41,7 +50,7 @@ const useStyles = makeStyles({
   specialFeature:{
     borderRight: '1px solid lightgray'
   }
-})
+}))
 
 function Prices() {
   const classes = useStyles()
@@ -52,7 +61,7 @@ function Prices() {
       centerPadding: 0,
       dots: true,
       infinite: true,
-      arrows:false,
+      arrows: true,
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 1,

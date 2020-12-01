@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import './App.css';
-import Navbar from './components/Navbar'
-import Carousel from './components/Carousel';
-import Prices from './components/Prices';
-import Portfolio from './components/Portfolio';
-import Features from './components/Features';
-import ContactUs from './components/ContactUs';
+import Navbar from '../components/Navbar'
+import Carousel from '../components/Carousel';
+import Prices from '../components/Prices';
+import Portfolio from '../components/Portfolio';
+import Features from '../components/Features';
+import ContactUs from '../components/ContactUs';
 import InsertCommentIcon from '@material-ui/icons/InsertComment';
+import CloseIcon from '@material-ui/icons/Close';
 import { makeStyles } from '@material-ui/core/styles'
 import { Box, Fab } from '@material-ui/core';
 import Chatbot from 'react-chatbot-kit'
-import messageParser from './chatbot/messageParser'
-import config from './chatbot/config'
-import actionProvider from './chatbot/actionProvider'
-import Services from './components/Services';
+import messageParser from '../chatbot/messageParser'
+import config from '../chatbot/config'
+import actionProvider from '../chatbot/actionProvider'
+import Services from '../components/Services';
 
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -27,9 +27,12 @@ const useStyles = makeStyles ({
     },
     chatBot:{
       position: 'fixed',
-      bottom:'9%',
+      bottom:'10%',
       right:'2%', 
-      height:'500px'
+      height:'500px',
+      '& .react-chatbot-kit-chat-message-container':{
+        overflowX: 'hidden',
+      }
     }
   }
 )
@@ -72,9 +75,15 @@ function App() {
           />
         </Box>
       )}
-      <Fab onClick={Bot} className={classes.button} variant="extended" color="default">
+      {showBot ? 
+        <Fab onClick={Bot} className={classes.button} variant="extended" color="secondary">
+        <CloseIcon fontSize="large" /> 
+      </Fab>
+        :
+      <Fab onClick={Bot} className={classes.button} variant="extended" color="primary">
         <InsertCommentIcon style={{ paddingRight: '8px' }} /> chat
       </Fab>
+      }
 
       
     </div>

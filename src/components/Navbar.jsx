@@ -3,7 +3,8 @@ import { AppBar, Typography, IconButton, Toolbar, Button, Hidden, Container, Dra
 import { makeStyles } from '@material-ui/core/styles'
 import { Menu, Inbox } from '@material-ui/icons'
 import Modal from './Modal'
-import { Link, animateScroll as scroll } from 'react-scroll'
+import { Link as SmoothScrollLink, animateScroll as scroll } from 'react-scroll'
+import { Link as ReactRouterLink } from 'react-router-dom'
 
 const useStyles = makeStyles({
   grow: {
@@ -25,13 +26,21 @@ const useStyles = makeStyles({
     width: '100%',
     minWidth: '260px',
   },
-  link: {
+  SmoothScrollLink: {
     color: 'white',
     fontSize: '14px'
   },
   contractButton: {
     borderRadius: '999px'
   },
+  anchor:{
+    textDecoration: 'none',
+    color: 'white'
+  },
+  anchorButton:{
+    borderRadius: '999px',
+    height: '100%'
+  }
 
 })
 
@@ -85,32 +94,34 @@ function Navbar() {
           </IconButton>
           <div className={classes.navbarRight}>
             <Hidden smDown>
-              <Link to="services" smooth={true} duration={1000}>
+              <SmoothScrollLink to="services" smooth={true} duration={1000}>
                 <IconButton aria-label="productos" >
-                  <Typography variant="body2" className={classes.link}>Productos</Typography> 
+                  <Typography variant="body2" className={classes.SmoothScrollLink}>Productos</Typography> 
                 </IconButton>
-              </Link>
-              <Link to="prices" smooth={true} duration={1000}>
+              </SmoothScrollLink>
+              <SmoothScrollLink to="prices" smooth={true} duration={1000}>
                 <IconButton aria-label="productos" >
-                  <Typography variant="body2" className={classes.link}>Paquetes</Typography>
+                  <Typography variant="body2" className={classes.SmoothScrollLink}>Paquetes</Typography>
                 </IconButton>
-              </Link>
-              <Link to="portfolio" smooth={true} duration={1000}>
+              </SmoothScrollLink>
+              <SmoothScrollLink to="portfolio" smooth={true} duration={1000}>
                 <IconButton aria-label="productos" >
-                  <Typography variant="body2" className={classes.link}>Portafolio</Typography>
+                  <Typography variant="body2" className={classes.SmoothScrollLink}>Portafolio</Typography>
                 </IconButton>
-              </Link>
-              <Link to="features" smooth={true} duration={1000}>
+              </SmoothScrollLink>
+              <SmoothScrollLink to="features" smooth={true} duration={1000}>
                 <IconButton aria-label="productos" >
-                  <Typography variant="body2" className={classes.link}>Sobre Nosotros</Typography>
+                  <Typography variant="body2" className={classes.SmoothScrollLink}>Sobre Nosotros</Typography>
                 </IconButton>
-              </Link>
-              <Link to="contactUs" smooth={true} duration={1000}>
+              </SmoothScrollLink>
+              <SmoothScrollLink to="contactUs" smooth={true} duration={1000}>
                 <IconButton aria-label="productos" >
-                  <Typography variant="body2" className={classes.link}>Contactanos</Typography> 
+                  <Typography variant="body2" className={classes.SmoothScrollLink}>Contactanos</Typography> 
                 </IconButton>
-              </Link> 
-              
+              </SmoothScrollLink> 
+              <ReactRouterLink to="/lsm-components" className={classes.anchor}>
+                <Button className={classes.anchorButton} color="primary" variant="contained" >Lsm Components</Button>
+              </ReactRouterLink> 
               <Button className={classes.contractButton} color="secondary" variant="contained" onClick={showModal}>Contratanos</Button>
             </Hidden>
             <Hidden mdUp>
@@ -129,46 +140,46 @@ function Navbar() {
             >
               <div className={classes.drawer}>
                 <List component='nav'>
-                  <Link to="services" smooth={true} duration={1000}>  
+                  <SmoothScrollLink to="services" smooth={true} duration={1000}>  
                     <ListItem button>
                       <ListItemIcon>
                         <Inbox />
                       </ListItemIcon>
                       <ListItemText primary="Productos" />
                     </ListItem>
-                  </Link>
-                  <Link to="prices" smooth={true} duration={1000}>
+                  </SmoothScrollLink>
+                  <SmoothScrollLink to="prices" smooth={true} duration={1000}>
                     <ListItem button>
                       <ListItemIcon>
                         <Inbox />
                       </ListItemIcon>
                       <ListItemText primary="Paquetes" />
                     </ListItem>
-                  </Link>
-                  <Link to="portfolio" smooth={true} duration={1000}>
+                  </SmoothScrollLink>
+                  <SmoothScrollLink to="portfolio" smooth={true} duration={1000}>
                     <ListItem button>
                       <ListItemIcon>
                         <Inbox />
                       </ListItemIcon>
                       <ListItemText primary="Portafolio" />
                     </ListItem>
-                  </Link>
-                  <Link to="features" smooth={true} duration={1000}>
+                  </SmoothScrollLink>
+                  <SmoothScrollLink to="features" smooth={true} duration={1000}>
                     <ListItem button>
                       <ListItemIcon>
                         <Inbox />
                       </ListItemIcon>
                       <ListItemText primary="Sobre Nosotros" />
                     </ListItem>
-                  </Link>
-                  <Link to="contactUs" smooth={true} duration={1000}>
+                  </SmoothScrollLink>
+                  <SmoothScrollLink to="contactUs" smooth={true} duration={1000}>
                     <ListItem button>
                       <ListItemIcon>
                         <Inbox />
                       </ListItemIcon>
                       <ListItemText primary="Contactanos" />
                     </ListItem>
-                  </Link>
+                  </SmoothScrollLink>
                   <ListItem button>
                     <Button className={classes.contractButton} variant="contained" color="secondary" onClick={showModal}>
                       Contratanos

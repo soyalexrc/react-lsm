@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Container, Grid, Typography, Link, IconButton, Dialog, DialogTitle, DialogContent, DialogContentText, TextField, DialogActions, Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import { Chat, MailOutline, PhoneAndroid, PhoneInTalk } from '@material-ui/icons'
+import { MailOutline, PhoneAndroid, PhoneInTalk, WhatsApp } from '@material-ui/icons'
 import db from '../Firebase'
 
 const useStyles = makeStyles ((theme) => ({
@@ -25,7 +25,13 @@ const useStyles = makeStyles ((theme) => ({
     '&:hover':{
       '& .MuiIconButton-root':{
         color: 'green'
-    }
+      },
+      '& a':{
+        color: 'green'
+      }
+    },
+    '& a': {
+      color: 'rgba(0, 0, 0, 0.54)', 
     }
   },
   card__right:{
@@ -102,7 +108,7 @@ function ContactUs() {
         
       <Grid container justify='center' alignItems='center'>
         <Grid item xs={12} sm={6} md={3} className={classes.card}>
-          <Link href="tel:+51917902604" target="_blank">
+          <Link href="tel:+584244507756" target="_blank">
             <IconButton>
                 <PhoneInTalk fontSize='large' className={classes.border}/>
             </IconButton>
@@ -146,7 +152,9 @@ function ContactUs() {
         </Grid>
         <Grid item xs={12} sm={6} md={3} className={classes.card}>
             <IconButton>
-                <Chat fontSize='large' className={classes.border}/>
+              <Link href="https://wa.me/584244507756"  target="_blank">
+                <WhatsApp fontSize='large' className={classes.border}/>
+              </Link>
             </IconButton>
           <div className={classes.card__right}>
             <Typography variant="h5" color="initial">
