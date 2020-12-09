@@ -1,12 +1,11 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { Button, Grid } from '@material-ui/core'
+import { Button, ButtonGroup } from '@material-ui/core'
+
 
 const useStyles = makeStyles({
-  buttonSpace : {
-    maxWidth: '192px',
-    marginTop: '10px',
-    marginBottom:'10px'
+  buttonGroup : {
+    display: 'flex'
   }
 })
 
@@ -14,39 +13,35 @@ function Plans(props) {
   const classes = useStyles()
   const plans = [
     {
-      text: 'plan basico',
+      text: 'plan Basico',
       handler: props.actionProvider.handleBasicPlan,
       id: 1
     },
     {
-      text: 'plan ejecutivo',
+      text: 'plan Inicial',
       handler: props.actionProvider.handleExecutivePlan,
       id: 2
     },
     {
-      text: 'plan empresarial',
+      text: 'plan Profesional',
+      handler: props.actionProvider.handleEnterprisePlan,
+      id: 3
+    },
+    {
+      text: 'plan Empresarial',
       handler: props.actionProvider.handleEnterprisePlan,
       id: 3
     }
   ]
 
   return (
-    <Grid
-      container
-      direction="column"
-      justify="center"
-      alignItems="center"
-      alignContent="center"
-      wrap="nowrap"
-    >
+    <ButtonGroup className={classes.buttonGroup} orientation="vertical" size="small" variant="outlined" color="primary" aria-label="vertical outlined primary button group">
       {plans.map((plan) =>(
-        <Grid item key={plan.id} >
-          <Button variant="contained" color="default" onClick={plan.handler} size="small" className={classes.buttonSpace}>
-            {plan.text}
-          </Button>
-        </Grid>
+        <Button key={plan.id} onClick={plan.handler} >
+          {plan.text}
+        </Button>
       ))}
-    </Grid>
+    </ButtonGroup>
   )
 }
 

@@ -1,12 +1,11 @@
 import React from 'react'
-import { Grid, Button } from '@material-ui/core'
+import { Button, ButtonGroup } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
+import { Link as SmoothLink } from 'react-scroll'
 
 const useStyles = makeStyles({
-  buttonSpace : {
-    maxWidth: '192px',
-    marginTop: '10px',
-    marginBottom:'10px'
+  buttonGroup : {
+    display: 'flex'
   }
 })
 
@@ -14,34 +13,50 @@ function Options(props) {
   const classes = useStyles()
   const options = [
     {
-      text: 'Adquirir un producto',
+      text: 'Mas detalles sobre planes',
       handler: props.actionProvider.handleNewProduct,
-      id: 1
+      id: 0
     },
     {
       text: 'Enviar un Correo',
       handler: props.actionProvider.handleSendEmail,
+      id: 1
+    },
+    {
+      text: 'Ver ejemplos de trabajos',
+      handler: props.actionProvider.showPortfolio,
       id: 2
+    },
+    {
+      text: 'que tipo de servicio ofrecen?',
+      handler: props.actionProvider.showServices,
+      id: 3,
+    },
+    {
+      text: 'Quiero llamar a alguien',
+      handler: props.actionProvider.callSomeone,
+      id: 4,
+    },
+    {
+      text: 'Comunicarme por WhatsApp',
+      handler: props.actionProvider.handleWhatsapp,
+      id: 5,
+    },
+    {
+      text: 'agendar una llamada',
+      handler: props.actionProvider.shceduleCall,
+      id: 6
     }
   ]
 
   return (
-    <Grid
-      container
-      direction="column"
-      justify="center"
-      alignItems="center"
-      alignContent="center"
-      wrap="nowrap"
-    >
+    <ButtonGroup className={classes.buttonGroup} orientation="vertical" size="small" variant="outlined" color="primary" aria-label="vertical outlined primary button group">
       {options.map((option) =>(
-        <Grid item key={option.id} >
-          <Button variant="contained" color="default" onClick={option.handler} size="small" className={classes.buttonSpace}>
-            {option.text}
-          </Button>
-        </Grid>
+        <Button key={option.id}   onClick={option.handler} >
+          {option.text}
+        </Button>
       ))}
-    </Grid>
+    </ButtonGroup>
   )
 }
 
