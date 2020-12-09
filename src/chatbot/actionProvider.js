@@ -57,6 +57,15 @@ class ActionProvider {
     this.addMessageToState(message)
   }
 
+  handleSendEmail = () => {
+    const message = this.createChatBotMessage("Llena el formulario para ponerte en contacto con nosotros!",
+    {
+      widget: 'sendEmail'
+    })
+
+    this.addMessageToState(message)
+  }
+
   // la magia de agregar los mensajes sin alterar el estado anterior, o mejor dicho... enviando el estado anterior y luego agregando el nuevo estado (message)
   addMessageToState = (message) => {
     this.setState(state => ({

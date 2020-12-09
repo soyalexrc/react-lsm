@@ -84,8 +84,40 @@ const useStyles = makeStyles(theme =>({
   }
 }))
 
+
+
+
 function Carousel() {
   const classes = useStyles()
+  const carouselData = [
+    {
+      containerClass: classes.slideOne,
+      centerClass: classes.center,
+      imageClass: classes.image,
+      imageSrc: 'https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimagen-carousel-1.png?alt=media&token=bf37c2b6-3792-4b59-b062-c08e4b79cc0b',
+      textClass: classes.text,
+      title: 'Diseño web profesional y desarrollo web',
+      text: 'Aprovechamos las fortalezas de todas y cada una de las plataformas para crear soluciones increíbles en dispositivos Apple iPhone, iPad, Apple Watch y dispositivos Android.'
+    },
+    {
+      containerClass: classes.slideTwo,
+      centerClass: classes.center,
+      imageClass: classes.image,
+      imageSrc: 'https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimagen-car-carousel-1.png?alt=media&token=b95fb856-c076-4e58-88b2-0d2b7cc29ec8',
+      textClass: classes.text,
+      title: 'Diseño y desarrollo web de siguiente nivel',
+      text: 'Nuestro dedicado equipo de expertos en diseño y tecnología se asocia con usted en cada paso del camino hacia la independencia de la innovación digital.'
+    },
+    {
+      containerClass: classes.slideThree,
+      centerClass: classes.center,
+      imageClass: classes.image,
+      imageSrc: 'https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimg-carousel-3.png?alt=media&token=79b4b777-661d-4020-af3f-e6bd8940ed97',
+      textClass: classes.text,
+      title: '70% de aumento en la tasa de conversión',
+      text: 'Capte clientes potenciales sin esfuerzo, establezca relaciones con los clientes y acepte pagos directamente desde su sitio web.'
+    }
+  ]
   const settings ={
     dots: false,
     infinite: true,
@@ -102,72 +134,25 @@ function Carousel() {
   return (
     <>
       <Slider {...settings} id="hero">
-        <div className={classes.slideOne}>
-          <Grid container alignItems='center' justify='center' alignContent='center'className={classes.slideOne}>
-            <Grid item xs={12} md={6}>
-              <figure className={classes.center}>
-                <img className={classes.image} src="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimagen-carousel-1.png?alt=media&token=bf37c2b6-3792-4b59-b062-c08e4b79cc0b" alt=""/>
-              </figure>
+        {carouselData.map((item) => (
+          <div className={item.containerClass}>
+            <Grid container alignItems='center' justify='center' alignContent='center' className={item.containerClass}>
+                <Grid item xs={12} md={6}>
+                    <figure className={item.centerClass}>
+                        <img src={item.imageSrc} className={item.imageClass} alt=""/>
+                    </figure>
+                </Grid>
+                <Grid item xs={12} md={6} className={item.textClass}>
+                    <Typography variant="h3" color="initial">
+                      {item.title}
+                    </Typography>
+                    <Typography variant="h6" color="initial">
+                      {item.text}
+                    </Typography>
+                </Grid>
             </Grid>
-            <Grid item xs={12} md={6} className={classes.text}>
-              <Typography variant="h3" color="initial">
-              Diseño web profesional y desarrollo web
-              </Typography>
-              <Typography variant="h6" color="initial">
-              Aprovechamos las fortalezas de todas y cada una de las plataformas para crear soluciones increíbles en dispositivos Apple iPhone, iPad, Apple Watch y dispositivos Android.
-              </Typography>
-            </Grid>
-          </Grid>
-        </div>
-        <div className={classes.slideTwo}>
-          <Grid container alignItems='center' justify='center' alignContent='center' className={classes.slideTwo}>
-            <Grid item xs={12} md={6}>
-              <figure className={classes.center}>
-                <img className={classes.image} src="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimagen-car-carousel-1.png?alt=media&token=b95fb856-c076-4e58-88b2-0d2b7cc29ec8" alt=""/>
-              </figure>
-            </Grid>
-            <Grid item xs={12} md={6} className={classes.text}>
-              <Typography variant="h3" color="initial">
-              Diseño y desarrollo web de siguiente nivel
-              </Typography>
-              <Typography variant="h6" color="initial">
-              Nuestro dedicado equipo de expertos en diseño y tecnología se asocia con usted en cada paso del camino hacia la independencia de la innovación digital.
-              </Typography>
-            </Grid>
-          </Grid>
-        </div>
-        <div className={classes.slideThree}>
-          <Grid container alignItems='center' justify='center' alignContent='center'className={classes.slideThree}>
-            <Grid item xs={12} md={6}>
-              <figure className={classes.center}>
-                <img className={classes.image} src="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimg-carousel-3.png?alt=media&token=79b4b777-661d-4020-af3f-e6bd8940ed97" alt=""/>
-              </figure>
-            </Grid>
-            <Grid item xs={12} md={6} className={classes.textBlack}>
-              <Typography variant="h3" color="initial">
-              70% de aumento en la tasa de conversión
-              </Typography>
-              <Typography variant="h6" color="initial">
-              Capte clientes potenciales sin esfuerzo, establezca relaciones con los clientes y acepte pagos directamente desde su sitio web.
-              </Typography>
-            </Grid>
-          </Grid>
-        </div>
-        {/* <Slide
-          img="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimagen-carousel-1.png?alt=media&token=bf37c2b6-3792-4b59-b062-c08e4b79cc0b"
-          title="Professional Web Design & Web Development"
-          description="We leverage the strengths of each and every platform to build incredible solutions across apple devices iPhone, iPad, Apple Watch, and android devices. "
-          />
-        <Slide 
-          img="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimagen-car-carousel-1.png?alt=media&token=b95fb856-c076-4e58-88b2-0d2b7cc29ec8"
-          title="Next Level Web Design & Development"
-          description="Our dedicated team of design and technology experts partner with you every step of the way of digital innovation independence. "
-        />
-        <Slide 
-          img="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimg-carousel-3.png?alt=media&token=79b4b777-661d-4020-af3f-e6bd8940ed97"
-          title="70% Increase In Convertion Rate"
-          description="Effortlessly capture leads, build customer relationships and accept payments right from your website. "
-        /> */}
+          </div>
+        ))}
       </Slider>
       <Link to="services" smooth={true} duration={1000}>
         <IconButton className={classes.arrowIcon}>

@@ -19,8 +19,8 @@ function Options(props) {
       id: 1
     },
     {
-      text: 'Hablar con alguien en tiempo real',
-      handler: props.actionProvider.handleHablarConAlquienEnTiempoReal,
+      text: 'Enviar un Correo',
+      handler: props.actionProvider.handleSendEmail,
       id: 2
     }
   ]

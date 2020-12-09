@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Container, Grid, Typography, Link, IconButton, Dialog, DialogTitle, DialogContent, DialogContentText, TextField, DialogActions, Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import { MailOutline, PhoneAndroid, PhoneInTalk, SettingsSystemDaydreamOutlined, WhatsApp } from '@material-ui/icons'
+import { MailOutline, PhoneAndroid, PhoneInTalk, /*SettingsSystemDaydreamOutlined*/ WhatsApp } from '@material-ui/icons'
 import db from '../Firebase'
 
 const useStyles = makeStyles ((theme) => ({
@@ -69,6 +69,7 @@ const useStyles = makeStyles ((theme) => ({
 
 }))
 
+
 function ContactUs() {
   const classes = useStyles() 
   const [ openCallModal, setOpenCallModal ] = useState(false)
@@ -77,20 +78,42 @@ function ContactUs() {
   const [ name, setName ] = useState('')
   const [ email, setEmail ] = useState('')
 
-  const handleOpenCallModal = () => {
-    setOpenCallModal(true)
+  const handleCallModal = () => {
+    setOpenCallModal(!openCallModal)
   }
+
+  const handleMailModal = () => {
+    setOpenMailModal(!openMailModal)
+  }
+
+  const conctactCardData = [
+    {
+      link: 'tel:+584244507756',
+      icon: <PhoneInTalk fontSize='large' className={classes.border} />,
+      title: 'Sin Costo',
+      subtitle: '+58 424 422 8420',
+    },
+    {
+      icon: <PhoneAndroid fontSize='large' className={classes.border} />,
+      onClick: handleCallModal,
+      title: 'Solicitar ',
+      subtitle: 'una llamada de vuelta',
+    },
+    {
+      icon: <MailOutline fontSize='large' className={classes.border} />,
+      onClick: handleMailModal,
+      title: 'Enviar un Correo a',
+      subtitle: 'lsmbusiness@gmail.com',
+    },
+    {
+      icon: <WhatsApp fontSize='large' className={classes.border} />,
+      link: 'https://wa.me/584244507756"',
+      title: 'Empezar un',
+      subtitle: "Chat en Vivo",
+    },
+  ]
   
-  const handleCloseCallModal = () => {
-    setOpenCallModal(false)
-  }
-  const handleOpenMailModal = () => {
-    setOpenMailModal(true)
-  }
-  
-  const handleCloseMailModal= () => {
-    setOpenMailModal(false)
-  }
+
 
   const handleSubmitCallModal = async() => {
     await db.collection('callbackClients')
@@ -106,14 +129,14 @@ function ContactUs() {
 
     setPhoneNumber('')
 
-    await handleCloseCallModal()
+    await handleCallModal()
   }
 
   const handleSubmitMailModal = async() => {
     await db.collection('requestClientsMail')
     .add({
       email: email,
-      name, name,
+      name: name,
     })
     .then(() => {
       alert( "Te hemos enviado un correo!, por favor revisa tu bandeja de entrada")
@@ -125,7 +148,7 @@ function ContactUs() {
     setName('')
     setEmail('')
 
-    await handleCloseMailModal()
+    await handleMailModal()
   }
 
   return (
@@ -141,65 +164,58 @@ function ContactUs() {
       <Container maxWidth='lg' className={classes.center}>
         
       <Grid container justify='center' alignItems='center'>
-        <Grid item xs={12} sm={6} md={3} className={classes.card}>
-          <Link href="tel:+584244507756" target="_blank">
-            <IconButton>
-                <PhoneInTalk fontSize='large' className={classes.border}/>
-            </IconButton>
-          </Link>
-          <div className={classes.card__right}>
-            <Typography variant="h5" color="initial">
-              Sin costo
-            </Typography>
-            <Typography variant="body2" color="initial">
-              +58 424 422 8420
-            </Typography>
-          </div>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3} className={classes.card}>
-            <IconButton onClick={handleOpenCallModal}>
-                <PhoneAndroid fontSize='large' className={classes.border}/>
-            </IconButton>
-          <div className={classes.card__right}>
-            <Typography variant="h5" color="initial">
-              Solicitar
-            </Typography>
-            <Typography variant="body2" color="initial">
-              Llamada de vuelta
-            </Typography>
-          </div>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3} className={classes.card}>
-            <IconButton onClick={handleOpenMailModal}>
-                <MailOutline fontSize='large' className={classes.border}/>
-            </IconButton>
-          <div className={classes.card__right}>
-            <Typography variant="h5" color="initial">
-              Enviar un correo a
-            </Typography>
-            <Typography variant="body2" color="initial">
-              lsmbusiness@gmail.com
-            </Typography>
-          </div>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3} className={classes.card}>
-            <IconButton>
-              <Link href="https://wa.me/584244507756"  target="_blank">
-                <WhatsApp fontSize='large' className={classes.border}/>
+        {conctactCardData.map((item) => (
+          <Grid item xs={12} md={3} sm={6} className={classes.card}>
+            {item.link ? (
+              <>
+              <Link href={item.link} target="_blank">
+                <IconButton >
+                  {item.icon}
+                </IconButton>
               </Link>
-            </IconButton>
-          <div className={classes.card__right}>
-            <Typography variant="h5" color="initial">
-              Empezar un
-            </Typography>
-            <Typography variant="body2" color="initial">
-              Chat en vivo
-            </Typography>
-          </div>
-        </Grid>
+                <div className={classes.card__right}>
+                  <Typography variant="h5" color="initial">
+                    {item.title}
+                  </Typography>
+                  <Typography variant="body2" color="initial">
+                    {item.subtitle}
+                  </Typography>
+                </div>
+              </>
+            ) : item.onClick ? (
+              <>
+                <IconButton onClick={item.onClick}>
+                  {item.icon}
+                </IconButton>
+                <div className={classes.card__right}>
+                  <Typography variant="h5" color="initial">
+                    {item.title}
+                  </Typography>
+                  <Typography variant="body2" color="initial">
+                    {item.subtitle}
+                  </Typography>
+                </div>
+              </>
+            ) : (
+              <>
+                <IconButton >
+                  {item.icon}
+                </IconButton>
+                <div className={classes.card.right}>
+                  <Typography variant="h5" color="initial">
+                    {item.title}
+                  </Typography>
+                  <Typography variant="body2" color="initial">
+                    {item.subtitle}
+                  </Typography>
+                </div>
+              </>
+            )}
+          </Grid>
+        ))}
       </Grid>
     </Container>
-    <Dialog open={openCallModal} onClose={handleCloseCallModal} aria-labelledby="form-dialog-title">
+    <Dialog open={openCallModal} onClose={handleCallModal} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Hola!</DialogTitle>
         <DialogContent>
           <DialogContentText>
@@ -224,7 +240,7 @@ function ContactUs() {
           </div>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleCloseCallModal} color="primary">
+          <Button onClick={handleCallModal} color="primary">
             Cancelar
           </Button>
           <Button onClick={handleSubmitCallModal} color="primary">
@@ -235,7 +251,7 @@ function ContactUs() {
 
 
 
-    <Dialog open={openMailModal} onClose={handleCloseMailModal} aria-labelledby="form-dialog-title">
+    <Dialog open={openMailModal} onClose={handleMailModal} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Hola!</DialogTitle>
         <DialogContent>
           <DialogContentText>
@@ -264,7 +280,7 @@ function ContactUs() {
           </div>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleCloseMailModal} color="primary">
+          <Button onClick={handleMailModal  } color="primary">
             Cancelar
           </Button>
           <Button onClick={handleSubmitMailModal} color="primary">

@@ -52,6 +52,234 @@ const useStyles = makeStyles( (theme) => ({
   }
 }))
 
+const slides = [
+  {
+    title: 'Basico(CMS)',
+    subtitle: 'Paquete Web',
+    prevPrice: '488',
+    actualPrice: '240',
+    icon: <PersonIcon fontSize="large" />,
+    data: [
+      {
+        title: 'Sitio Web Prediseñado',
+        icon: <WebIcon fontSize='large'/>,
+      },
+      {
+        title: 'Administracion de Contenido',
+        icon: <TocIcon fontSize='large'/>,
+      },
+      {
+        title: 'Galeria de Imagenes',
+        icon: <PhotoLibraryIcon fontSize='large'/>,
+      },
+      {
+        title: 'Cantidad de Imagenes max(05)',
+        icon: <FileCopyIcon fontSize='large'/>,
+      },
+      {
+        title: 'Formulario de Contacto',
+        icon: <ContactMailIcon fontSize='large'/>,
+      },
+      {
+        title: 'Slider de Imágenes',
+        icon: <ViewCarouselIcon fontSize='large'/>,
+      },
+      {
+        title: 'Diseño Responsive',
+        icon:  <ImportantDevicesIcon fontSize='large'/>,
+      },
+      {
+        title: 'Links a Redes Sociales',
+        icon: <FacebookIcon fontSize='large'/>,
+      },
+      {
+        title: 'Alta en Buscadores',
+        icon:  <SearchIcon fontSize='large'/>
+      },
+    ]
+  },
+  {
+    title: 'Inicial',
+    subtitle: 'Paquete Web',
+    prevPrice: '499',
+    actualPrice: '350',
+    icon: <SupervisorAccountIcon fontSize="large" />,
+    data: [
+      {
+        title: 'Sitio Web Prediseñado (Con Plantillas)',
+        icon: <WebIcon fontSize='large'/>,
+      },
+      {
+        title: 'Administración de Contenido',
+        icon: <TocIcon fontSize='large'/>,
+      },
+      {
+        title: 'Galeria de Imagenes',
+        icon: <PhotoLibraryIcon fontSize='large'/>,
+      },
+      {
+        title: 'Cantidad de Imagenes max(07)',
+        icon: <FileCopyIcon fontSize='large'/>,
+      },
+      {
+        title: 'Formulario de Contacto',
+        icon: <ContactMailIcon fontSize='large'/>,
+      },
+      {
+        title: 'Slider de Imágenes',
+        icon: <ViewCarouselIcon fontSize='large'/>,
+      },
+      {
+        title: 'Diseño Responsive',
+        icon:  <ImportantDevicesIcon fontSize='large'/>,
+      },
+      {
+        title: 'Links a Redes Sociales',
+        icon: <FacebookIcon fontSize='large'/>,
+      },
+      {
+        title: 'Alta en Buscadores',
+        icon:  <SearchIcon fontSize='large'/>
+      },
+    ]
+  },
+  {
+    title: 'Profesional',
+    subtitle: 'Paquete Web',
+    prevPrice: '750',
+    actualPrice: '600',
+    icon: <BusinessCenterIcon fontSize="large" />,
+    data: [
+      {
+        title: 'Diseño Web Personalizado (Basado en Plantilla)',
+        icon: <WebIcon fontSize='large'/>,
+      },
+      {
+        title: 'Autogestion de Contenido',
+        icon: <TocIcon fontSize='large'/>,
+      },
+      {
+        title: 'Cantidad de Páginas definidas por el Cliente',
+        icon: <PhotoLibraryIcon fontSize='large'/>,
+      },
+      {
+        title: 'Portafolio de Productos o Servicios',
+        icon: <FileCopyIcon fontSize='large'/>,
+      },
+      {
+        title: 'Galera de Imagenes',
+        icon: <ContactMailIcon fonrSize="large" />
+      },
+      {
+        title: 'Slider de Imágenes y Contenido',
+        icon: <ViewCarouselIcon fontSize='large'/>,
+      },
+      {
+        title: 'Slider de Imágenes',
+        icon: <ViewCarouselIcon fontSize='large'/>,
+      },
+      {
+        title: 'Diseño Responsive',
+        icon:  <ImportantDevicesIcon fontSize='large'/>,
+      },
+      {
+        title: 'Links a Redes Sociales',
+        icon: <FacebookIcon fontSize='large'/>,
+      },
+      {
+        title: 'Posicionamiento SEO Básico',
+        icon:  <SearchIcon fontSize='large'/>
+      },
+      {
+        title: 'Diseño Inteligente E-Marketing',
+        icon: <SearchIcon fontSize="large" />
+      }
+    ]
+  },
+  {
+    title: 'Empresarial',
+    subtitle: 'Paquete Web',
+    prevPrice: '1050',
+    actualPrice: '820',
+    icon: <BusinessIcon fontSize="large" />,
+    data: [
+      {
+        title: '03 Propuestas Graficas de Diseño',
+        icon: <WebIcon fontSize='large'/>,
+      },
+      {
+        title: 'Autogestion de Contenido',
+        icon: <TocIcon fontSize='large'/>,
+      },
+      {
+        title: 'Cantidad de Páginas definidas por el Cliente',
+        icon: <PhotoLibraryIcon fontSize='large'/>,
+      },
+      {
+        title: 'Portafolio de Productos o Servicios',
+        icon: <FileCopyIcon fontSize='large'/>,
+      },
+      {
+        title: 'Galera de Imagenes',
+        icon: <ContactMailIcon fonrSize="large" />
+      },
+      {
+        title: 'Slider de Imágenes y Contenido',
+        icon: <ViewCarouselIcon fontSize='large'/>,
+      },
+      {
+        title: 'Slider de Imágenes',
+        icon: <ViewCarouselIcon fontSize='large'/>,
+      },
+      {
+        title: 'Diseño Responsive',
+        icon:  <ImportantDevicesIcon fontSize='large'/>,
+      },
+      {
+        title: 'Links a Redes Sociales',
+        icon: <FacebookIcon fontSize='large'/>,
+      },
+      {
+        title: 'Posicionamiento SEO Plus',
+        icon:  <SearchIcon fontSize='large'/>
+      },
+      {
+        title: 'Integración Google Maps',
+        icon: <SearchIcon fontSize="large" />
+      },
+      {
+        title: 'Integracion con Google Analytics',
+        icon: <SearchIcon fontSize='large' />
+      },
+      {
+        title: 'Configuracion con Google Email',
+        icon: <SearchIcon fontSize="large" />
+      },
+      {
+        title: 'Diseño Inteligente E-Marketing',
+        icon: <SearchIcon fontSize="large" />
+      }
+    ]
+  },
+]
+
+const features = [
+  {
+    img: 'https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Fsello.png?alt=media&token=a5c23ef6-d3a8-492e-ab8d-02c95e163484%20alt=',
+    text: 'Garantía de satisfacción del 100%', 
+    special: true,
+  },
+  {
+    img: 'https://images.vexels.com/media/users/3/151682/isolated/preview/4b0d15f5752398c439dee306fc58d821-icono-de-diamante-negro-by-vexels.png',
+    text: 'Garantía de diseño único', 
+    special: true,
+  },
+  {
+    img: 'https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Fpluma.png?alt=media&token=6ab0193a-01b8-4627-92c9-6513e5da7f19',
+    text: 'Consultoría de diseño 24/7', 
+  },
+]
+
 function Prices() {
   const classes = useStyles()
 
@@ -117,58 +345,17 @@ function Prices() {
     </Grid>
 
     <Slider {...settings} className={classes.space}>
-      <PricesSlide title='Basico(CMS)' subtitle='Paquete web' prevPrice='488' actualPrice='240' Icon={<PersonIcon fontSize='large'/>}>
-        <PricesSlideFeature title='Sitio Web Prediseñado' Icon={<WebIcon fontSize='large'/>} />
-        <PricesSlideFeature title='Administración de Contenido' Icon={<TocIcon fontSize='large'/>} />
-        <PricesSlideFeature title='Galería de Imágenes' Icon={<PhotoLibraryIcon fontSize='large'/>}  />
-        <PricesSlideFeature title='Cantidad de Páginas (Max 05)' Icon={<FileCopyIcon fontSize='large'/>} />
-        <PricesSlideFeature title='Formulario de Contacto' Icon={<ContactMailIcon fontSize='large'/>} />
-        <PricesSlideFeature title='Slider de Imágenes' Icon={<ViewCarouselIcon fontSize='large'/>} />
-        <PricesSlideFeature title='Diseño Responsive' Icon={<ImportantDevicesIcon fontSize='large'/>} />
-        <PricesSlideFeature title='Links a Redes Sociales' Icon={<FacebookIcon fontSize='large'/>} />
-        <PricesSlideFeature title='Alta en Buscadores' Icon={<SearchIcon fontSize='large'/>} />
-      </PricesSlide>
-
-      <PricesSlide title='Inicial' subtitle='Paquete web' prevPrice='499' actualPrice='350' Icon={<SupervisorAccountIcon fontSize='large'/>}>
-        <PricesSlideFeature title='Sitio Web Prediseñado (Con Plantillas)' Icon={<WebIcon fontSize='large'/>} />
-        <PricesSlideFeature title='Administración de Contenido' Icon={<TocIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Galería de Imágenes' Icon={<PhotoLibraryIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Cantidad de Páginas (Max 07)' Icon={<FileCopyIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Formulario de Contacto' Icon={<ContactMailIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Slider de Imágenes' Icon={<ViewCarouselIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Diseño Responsive' Icon={<ImportantDevicesIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Links a Redes Sociales' Icon={<FacebookIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Alta en Buscadores' Icon={<SearchIcon fontSize='large'/>}/>
-      </PricesSlide>
-
-      <PricesSlide title='Profesional' subtitle='Paquete web' prevPrice='750' actualPrice='600' Icon={<BusinessCenterIcon fontSize='large'/>}>
-        <PricesSlideFeature title='Diseño Web Personalizado (Basado en Plantilla)' Icon={<WebIcon fontSize='large'/>} />
-        <PricesSlideFeature title='Autogestión de Contenido' Icon={<TocIcon />}/>
-        <PricesSlideFeature title='Cantidad de Páginas definidas por el Cliente' Icon={<PhotoLibraryIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Portafolio de Productos o Servicios' Icon={<FileCopyIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Galería de Imágenes' Icon={<ContactMailIcon />}/>
-        <PricesSlideFeature title='Slider de Imágenes y Contenido' Icon={<ViewCarouselIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Diseño Responsive' Icon={<ImportantDevicesIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Integracion a Redes Sociales' Icon={<FacebookIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Posicionamiento SEO Básico' Icon={<SearchIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Diseño Inteligente E-Marketing' Icon={<SearchIcon fontSize='large'/>}/>
-      </PricesSlide>
-
-      <PricesSlide title='Empresarial' subtitle='Paquete web' prevPrice='1050' actualPrice='820' Icon={<BusinessIcon fontSize='large'/>}>
-        <PricesSlideFeature title='03 Propuestas Gráficas de Diseño' Icon={<WebIcon fontSize='large'/>} />
-        <PricesSlideFeature title='Autogestión de Contenido' Icon={<TocIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Cantidad de Páginas definidas por el Cliente' Icon={<PhotoLibraryIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Portafolio de Productos o Servicios' Icon={<FileCopyIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Galería de Imágenes' Icon={<ContactMailIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Slider de Imágenes y Contenido' Icon={<ViewCarouselIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Diseño Responsive' Icon={<ImportantDevicesIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Integracion a Redes Sociales' Icon={<FacebookIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Posicionamiento SEO Básico Plus' Icon={<SearchIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Diseño Inteligente E-Marketing' Icon={<SearchIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Integración Google Maps' Icon={<SearchIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Integración Google Analytics' Icon={<SearchIcon fontSize='large'/>}/>
-        <PricesSlideFeature title='Configuración Google Email ' Icon={<SearchIcon fontSize='large'/>}/>
-      </PricesSlide>
+      {
+        slides.map((slide) => (
+          <PricesSlide title={slide.title} subtitle={slide.subtitle} prevPrice={slide.prevPrice} actualPrice={slide.actualPrice} Icon={slide.icon} >
+            {
+              slide.data.map((data) => (
+                <PricesSlideFeature title={data.title} Icon={data.icon} />
+              ))
+            }
+          </PricesSlide>
+        ))
+      }
     </Slider>
 
       <Typography variant="h4" align='center' color="initial">
@@ -183,30 +370,18 @@ function Prices() {
         alignContent="center"
         wrap='wrap'
         >
-        <Grid item xs={4} className={classes.specialFeature}>
-            <div className={classes.imageContainer}>
-              <img className={classes.img} src="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Fsello.png?alt=media&token=a5c23ef6-d3a8-492e-ab8d-02c95e163484%20alt=" alt=""/>
-            </div>
-          <Typography variant="h6" color="textSecondary" align='center'>
-          Garantía de satisfacción del 100%
-          </Typography>
-        </Grid>
-        <Grid item xs={4} className={classes.specialFeature} >
-            <div className={classes.imageContainer}>
-              <img className={classes.img} src="https://images.vexels.com/media/users/3/151682/isolated/preview/4b0d15f5752398c439dee306fc58d821-icono-de-diamante-negro-by-vexels.png" alt=""/>
-            </div>
-          <Typography variant="h6" color="textSecondary" align='center'>
-          Garantía de diseño único
-          </Typography>
-        </Grid>
-        <Grid item xs={4} >
-            <div className={classes.imageContainer}>
-              <img className={classes.img} src="https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Fpluma.png?alt=media&token=6ab0193a-01b8-4627-92c9-6513e5da7f19" alt=""/>
-            </div>
-          <Typography variant="h6" color="textSecondary" align='center'>
-            Consultoría de diseño 24/7
-          </Typography>
-        </Grid>
+          {
+            features.map((feature) =>(
+              <Grid item xs={4} className={`${feature.special ? classes.specialFeature : '' }`}>
+                <div className={classes.imageContainer}>
+                  <img src={feature.img} className={classes.img} alt=""/>
+                </div>
+                <Typography variant="h6" color="initial" align='center'>
+                  {feature.text}
+                </Typography>
+              </Grid>
+            ))
+          }
       </Grid>
 
     </Container>
