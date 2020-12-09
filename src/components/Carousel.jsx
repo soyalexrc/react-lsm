@@ -5,6 +5,7 @@ import { Grid, Typography, IconButton } from '@material-ui/core'
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import { Link } from 'react-scroll'
 // import Slide from './Slide'
+import { carouselData } from '../utils'
 
 const useStyles = makeStyles(theme =>({
   arrowIcon: {
@@ -89,35 +90,7 @@ const useStyles = makeStyles(theme =>({
 
 function Carousel() {
   const classes = useStyles()
-  const carouselData = [
-    {
-      containerClass: classes.slideOne,
-      centerClass: classes.center,
-      imageClass: classes.image,
-      imageSrc: 'https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimagen-carousel-1.png?alt=media&token=bf37c2b6-3792-4b59-b062-c08e4b79cc0b',
-      textClass: classes.text,
-      title: 'Diseño web profesional y desarrollo web',
-      text: 'Aprovechamos las fortalezas de todas y cada una de las plataformas para crear soluciones increíbles en dispositivos Apple iPhone, iPad, Apple Watch y dispositivos Android.'
-    },
-    {
-      containerClass: classes.slideTwo,
-      centerClass: classes.center,
-      imageClass: classes.image,
-      imageSrc: 'https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimagen-car-carousel-1.png?alt=media&token=b95fb856-c076-4e58-88b2-0d2b7cc29ec8',
-      textClass: classes.text,
-      title: 'Diseño y desarrollo web de siguiente nivel',
-      text: 'Nuestro dedicado equipo de expertos en diseño y tecnología se asocia con usted en cada paso del camino hacia la independencia de la innovación digital.'
-    },
-    {
-      containerClass: classes.slideThree,
-      centerClass: classes.center,
-      imageClass: classes.image,
-      imageSrc: 'https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm%2Fimg-carousel-3.png?alt=media&token=79b4b777-661d-4020-af3f-e6bd8940ed97',
-      textClass: classes.text,
-      title: '70% de aumento en la tasa de conversión',
-      text: 'Capte clientes potenciales sin esfuerzo, establezca relaciones con los clientes y acepte pagos directamente desde su sitio web.'
-    }
-  ]
+
   const settings ={
     dots: false,
     infinite: true,
@@ -134,15 +107,15 @@ function Carousel() {
   return (
     <>
       <Slider {...settings} id="hero">
-        {carouselData.map((item) => (
+        {carouselData.map((item, index) => (
           <div className={item.containerClass}>
-            <Grid container alignItems='center' justify='center' alignContent='center' className={item.containerClass}>
+            <Grid container alignItems='center' justify='center' alignContent='center' className={`${index === 0 ? classes.slideOne : index === 1 ? classes.slideTwo : classes.slideThree }`}>
                 <Grid item xs={12} md={6}>
-                    <figure className={item.centerClass}>
-                        <img src={item.imageSrc} className={item.imageClass} alt=""/>
+                    <figure className={classes.center}>
+                        <img src={item.imageSrc} className={classes.image} alt=""/>
                     </figure>
                 </Grid>
-                <Grid item xs={12} md={6} className={item.textClass}>
+                <Grid item xs={12} md={6} className={classes.text}>
                     <Typography variant="h3" color="initial">
                       {item.title}
                     </Typography>

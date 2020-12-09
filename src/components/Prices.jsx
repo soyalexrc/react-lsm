@@ -18,6 +18,8 @@ import PersonIcon from '@material-ui/icons/Person';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 
+import { pricesFeatures } from '../utils'
+
 const useStyles = makeStyles( (theme) => ({
   space: {
     marginBottom: '1.5rem ',
@@ -263,22 +265,6 @@ const slides = [
   },
 ]
 
-const features = [
-  {
-    img: 'https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Fsello.png?alt=media&token=a5c23ef6-d3a8-492e-ab8d-02c95e163484%20alt=',
-    text: 'Garantía de satisfacción del 100%', 
-    special: true,
-  },
-  {
-    img: 'https://images.vexels.com/media/users/3/151682/isolated/preview/4b0d15f5752398c439dee306fc58d821-icono-de-diamante-negro-by-vexels.png',
-    text: 'Garantía de diseño único', 
-    special: true,
-  },
-  {
-    img: 'https://firebasestorage.googleapis.com/v0/b/lsm-1-46b3d.appspot.com/o/lsm-assets%2Fpluma.png?alt=media&token=6ab0193a-01b8-4627-92c9-6513e5da7f19',
-    text: 'Consultoría de diseño 24/7', 
-  },
-]
 
 function Prices() {
   const classes = useStyles()
@@ -371,7 +357,7 @@ function Prices() {
         wrap='wrap'
         >
           {
-            features.map((feature) =>(
+            pricesFeatures.map((feature) =>(
               <Grid item xs={4} className={`${feature.special ? classes.specialFeature : '' }`}>
                 <div className={classes.imageContainer}>
                   <img src={feature.img} className={classes.img} alt=""/>
