@@ -28,25 +28,37 @@ class ActionProvider {
   //plans
 
   handleInitialPlan = () => {
-    const message = this.createChatBotMessage('el plan basico cuesta 2 lochas, no seas pichirre')
+    const message = this.createChatBotMessage('el plan basico cuesta 2 lochas, no seas pichirre',
+    {
+      widget: 'initialPlan'
+    })
 
     this.addMessageToState(message)
   }
 
   handleBasicPlan = () => {
-    const message = this.createChatBotMessage('este es el propio rey xD')
+    const message = this.createChatBotMessage('este es el propio rey xD',
+    {
+      widget: 'basicPlan'
+    })
 
     this.addMessageToState(message)
   }
 
   handleProfessionalPlan = () => {
-    const message = this.createChatBotMessage('el plan empresarial es demasiado arrecho, tu eres loco ramon?')
+    const message = this.createChatBotMessage('el plan empresarial es demasiado arrecho, tu eres loco ramon?',
+    {
+      widget: 'professionalPlan'
+    })
 
     this.addMessageToState(message)
   }
 
   handleEnterprisePlan = () => {
-    const message = this.createChatBotMessage('el plan empresarial es demasiado arrecho, tu eres loco ramon?')
+    const message = this.createChatBotMessage('el plan empresarial es demasiado arrecho, tu eres loco ramon?',
+    {
+      widget: 'enterprisePlan'
+    })
 
     this.addMessageToState(message)
   }

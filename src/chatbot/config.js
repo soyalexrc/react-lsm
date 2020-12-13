@@ -8,6 +8,10 @@ import ScheduleCall from './components/ScheduleCall'
 import CallSomeone from './components/CallSomeone'
 import Services from './components/Services'
 import Portfolio from './components/Portfolio'
+import InitialPlan from './components/plans/InitialPlan'
+import BasicPlan from './components/plans/BasicPlan'
+import ProfessionalPlan from './components/plans/ProfessionalPlan'
+import EnterprisePlan from './components/plans/EnterprisePlan'
 import { createChatBotMessage } from "react-chatbot-kit";
 
 const botName ='LSMbot'
@@ -51,6 +55,25 @@ const config = {
     {
       widgetName: 'portfolio',
       widgetFunc: (props) => <Portfolio {...props} />
+    },
+
+      // plans
+
+    {
+      widgetName: 'initialPlan',
+      widgetFunc: (props) => <InitialPlan {...props} />
+    },
+    {
+      widgetName: 'basicPlan',
+      widgetFunc: (props) => <BasicPlan {...props} />
+    },
+    {
+      widgetName: 'professionalPlan',
+      widgetFunc: (props) => <ProfessionalPlan {...props} />
+    },
+    {
+      widgetName: 'enterprisePlan',
+      widgetFunc: (props) => <EnterprisePlan {...props} />
     },
   ]
 
