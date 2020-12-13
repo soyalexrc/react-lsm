@@ -18,7 +18,7 @@ import PersonIcon from '@material-ui/icons/Person';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 
-import { pricesFeatures } from '../utils'
+import { pricesFeatures } from '../generalData'
 
 const useStyles = makeStyles( (theme) => ({
   space: {
