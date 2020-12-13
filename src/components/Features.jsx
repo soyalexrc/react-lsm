@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Typography, Grid } from '@material-ui/core/'
 import Feature from './Feature'
 import { makeStyles } from '@material-ui/core/styles'
-import { featuresData } from '../utils'
+import { featuresData } from '../generalData'
 
 const useStyles = makeStyles ({ 
     space: {

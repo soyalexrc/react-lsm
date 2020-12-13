@@ -3,7 +3,7 @@ import Container from '@material-ui/core/Container'
 import { GridList, GridListTile, Typography, Grid, IconButton } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
-import  { portfolioData } from '../utils'
+import  { portfolioData } from '../generalData'
 
 const useStyles = makeStyles((theme) => ({
   container:{

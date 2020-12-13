@@ -5,7 +5,7 @@ import { Grid, Typography, IconButton } from '@material-ui/core'
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import { Link } from 'react-scroll'
 // import Slide from './Slide'
-import { carouselData } from '../utils'
+import { carouselData } from '../generalData'
 
 const useStyles = makeStyles(theme =>({
   arrowIcon: {
