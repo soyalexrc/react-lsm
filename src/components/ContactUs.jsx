@@ -107,7 +107,7 @@ function ContactUs() {
     },
     {
       icon: <WhatsApp fontSize='large' className={classes.border} />,
-      link: 'https://wa.me/584244507756"',
+      link: 'https://wa.me/584244507756',
       title: 'Empezar un',
       subtitle: "Chat en Vivo",
     },

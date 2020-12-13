@@ -25,6 +25,93 @@ class ActionProvider {
     this.addMessageToState(message)
   }
 
+  //plans
+
+  handleInitialPlan = () => {
+    const message = this.createChatBotMessage('el plan basico cuesta 2 lochas, no seas pichirre')
+
+    this.addMessageToState(message)
+  }
+
+  handleBasicPlan = () => {
+    const message = this.createChatBotMessage('este es el propio rey xD')
+
+    this.addMessageToState(message)
+  }
+
+  handleProfessionalPlan = () => {
+    const message = this.createChatBotMessage('el plan empresarial es demasiado arrecho, tu eres loco ramon?')
+
+    this.addMessageToState(message)
+  }
+
+  handleEnterprisePlan = () => {
+    const message = this.createChatBotMessage('el plan empresarial es demasiado arrecho, tu eres loco ramon?')
+
+    this.addMessageToState(message)
+  }
+
+
+  //contactActions
+
+
+  handleSendEmail = () => {
+    const message = this.createChatBotMessage("Llena el formulario para ponerte en contacto con nosotros!",
+    {
+      widget: 'sendEmail'
+    })
+
+    this.addMessageToState(message)
+  }
+
+  handleCallSomeone = () => {
+    const message = this.createChatBotMessage("Llena el formulario para ponerte en contacto con nosotros!",
+    {
+      widget: 'callSomeone'
+    })
+
+    this.addMessageToState(message)
+  }
+
+  handleWhatsapp = () => {
+    const message = this.createChatBotMessage("Llena el formulario para ponerte en contacto con nosotros!",
+    {
+      widget: 'whatsapp'
+    })
+
+    this.addMessageToState(message)
+  }
+
+  handleScheduleCall = () => {
+    const message = this.createChatBotMessage("Llena el formulario para ponerte en contacto con nosotros!",
+    {
+      widget: 'scheduleCall'
+    })
+
+    this.addMessageToState(message)
+  }
+
+  handleServices = () => {
+    const message = this.createChatBotMessage("Llena el formulario para ponerte en contacto con nosotros!",
+    {
+      widget: 'services'
+    })
+
+    this.addMessageToState(message)
+  }
+
+  handlePortfolio = () => {
+    const message = this.createChatBotMessage("Llena el formulario para ponerte en contacto con nosotros!",
+    {
+      widget: 'portfolio'
+    })
+
+    this.addMessageToState(message)
+  }
+
+  //just informative
+
+
   whoWeAre = () =>{
     const message = this.createChatBotMessage('somos una empresa de servicos digitales, especializados en diseno web robusto, funcional, interactivo y moderno. realizamos todo tipo de web apps, desde las mas complejas hasta las mas sencillas, te invito a que nos contactes (mensaje de ejemplo, no se que mas poner jeje XD)')
 
@@ -37,34 +124,6 @@ class ActionProvider {
     this.addMessageToState(message)
   }
 
-  handleBasicPlan = () => {
-    const message = this.createChatBotMessage('el plan basico cuesta 2 lochas, no seas pichirre')
-
-    this.addMessageToState(message)
-  }
-
-  
-  handleExecutivePlan = () => {
-    const message = this.createChatBotMessage('este es el propio rey xD')
-
-    this.addMessageToState(message)
-  }
-
-  
-  handleEnterprisePlan = () => {
-    const message = this.createChatBotMessage('el plan empresarial es demasiado arrecho, tu eres loco ramon?')
-
-    this.addMessageToState(message)
-  }
-
-  handleSendEmail = () => {
-    const message = this.createChatBotMessage("Llena el formulario para ponerte en contacto con nosotros!",
-    {
-      widget: 'sendEmail'
-    })
-
-    this.addMessageToState(message)
-  }
 
   // la magia de agregar los mensajes sin alterar el estado anterior, o mejor dicho... enviando el estado anterior y luego agregando el nuevo estado (message)
   addMessageToState = (message) => {

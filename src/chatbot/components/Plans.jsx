@@ -13,18 +13,18 @@ function Plans(props) {
   const classes = useStyles()
   const plans = [
     {
-      text: 'plan Basico',
-      handler: props.actionProvider.handleBasicPlan,
+      text: 'plan Inicial',
+      handler: props.actionProvider.handleInitialPlan,
       id: 1
     },
     {
-      text: 'plan Inicial',
-      handler: props.actionProvider.handleExecutivePlan,
+      text: 'plan Basico',
+      handler: props.actionProvider.handleBasicPlan,
       id: 2
     },
     {
       text: 'plan Profesional',
-      handler: props.actionProvider.handleEnterprisePlan,
+      handler: props.actionProvider.handleProfessionalPlan,
       id: 3
     },
     {

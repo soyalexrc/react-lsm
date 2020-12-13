@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField, Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import db from '../Firebase'
+import db from '../../Firebase'
 
 const useStyles = makeStyles ({
-  modalCallContainer:{
+  modalMailContainer:{
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'space-evenly'
   },
 })
 
